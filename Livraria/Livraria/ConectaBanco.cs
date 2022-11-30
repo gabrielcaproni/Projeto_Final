@@ -65,6 +65,27 @@ namespace Livraria
         }// fim lista_produto
 
 
+        public bool insereProduto(Livro livro)
+        {
+            MySqlCommand cmd = new MySqlCommand("insere_produto", conexao);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("novoNome", livro.Nome);
+            try
+            {
+                conexao.Open();
+                cmd.ExecuteNonQuery(); // executa o comando
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                mensagem = "Erro:" + e.Message;
+                return false;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }// fim insereProduto 
 
 
 

@@ -2,14 +2,14 @@ using System.Data;
 
 namespace Livraria
 {
-    public partial class Livraria : Form
+    public partial class Livraria1 : Form
     {
-        public Livraria()
+        public Livraria1()
         {
             InitializeComponent();
         }
 
-        void listaEditora()
+        void ListaEditora()
         {
             ConectaBanco con = new ConectaBanco();
             DataTable tabelaDados = new DataTable();
@@ -26,7 +26,7 @@ namespace Livraria
             cbEditora.Text = "";
             //cbAlteraGenero.Text = "";
         }
-        void listaProduto()
+        void ListaProduto()
         {
             ConectaBanco con = new ConectaBanco();
             dgProdutos.DataSource = con.lista_produto();

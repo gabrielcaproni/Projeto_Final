@@ -31,12 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Livraria));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCadastrar = new System.Windows.Forms.TabPage();
+            this.txtlivro = new System.Windows.Forms.TextBox();
             this.bntAddGenero = new System.Windows.Forms.Button();
             this.cbEditora = new System.Windows.Forms.ComboBox();
             this.txtranking = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtpreco = new System.Windows.Forms.Label();
             this.BtnConfirmaCadastro = new System.Windows.Forms.Button();
-            this.txtintegrantes = new System.Windows.Forms.TextBox();
+            this.txtdata = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblerro = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabCadastrar.SuspendLayout();
             this.tabBuscar.SuspendLayout();
@@ -77,19 +77,19 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(759, 308);
+            this.tabControl1.Size = new System.Drawing.Size(809, 329);
             this.tabControl1.TabIndex = 10;
             // 
             // tabCadastrar
             // 
             this.tabCadastrar.BackColor = System.Drawing.Color.White;
-            this.tabCadastrar.Controls.Add(this.textBox1);
+            this.tabCadastrar.Controls.Add(this.txtlivro);
             this.tabCadastrar.Controls.Add(this.bntAddGenero);
             this.tabCadastrar.Controls.Add(this.cbEditora);
             this.tabCadastrar.Controls.Add(this.txtranking);
-            this.tabCadastrar.Controls.Add(this.label6);
+            this.tabCadastrar.Controls.Add(this.txtpreco);
             this.tabCadastrar.Controls.Add(this.BtnConfirmaCadastro);
-            this.tabCadastrar.Controls.Add(this.txtintegrantes);
+            this.tabCadastrar.Controls.Add(this.txtdata);
             this.tabCadastrar.Controls.Add(this.label3);
             this.tabCadastrar.Controls.Add(this.label2);
             this.tabCadastrar.Controls.Add(this.label4);
@@ -97,9 +97,18 @@
             this.tabCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.tabCadastrar.Name = "tabCadastrar";
             this.tabCadastrar.Padding = new System.Windows.Forms.Padding(4);
-            this.tabCadastrar.Size = new System.Drawing.Size(751, 278);
+            this.tabCadastrar.Size = new System.Drawing.Size(801, 299);
             this.tabCadastrar.TabIndex = 0;
             this.tabCadastrar.Text = "Cadastrar";
+            // 
+            // txtlivro
+            // 
+            this.txtlivro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtlivro.Location = new System.Drawing.Point(216, 12);
+            this.txtlivro.Margin = new System.Windows.Forms.Padding(4);
+            this.txtlivro.Name = "txtlivro";
+            this.txtlivro.Size = new System.Drawing.Size(560, 27);
+            this.txtlivro.TabIndex = 16;
             // 
             // bntAddGenero
             // 
@@ -122,31 +131,30 @@
             this.cbEditora.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbEditora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbEditora.FormattingEnabled = true;
-            this.cbEditora.Location = new System.Drawing.Point(154, 54);
+            this.cbEditora.Location = new System.Drawing.Point(216, 59);
             this.cbEditora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbEditora.Name = "cbEditora";
             this.cbEditora.Size = new System.Drawing.Size(560, 29);
             this.cbEditora.TabIndex = 10;
-            this.cbEditora.SelectedIndexChanged += new System.EventHandler(this.cbGenero_SelectedIndexChanged);
             // 
             // txtranking
             // 
             this.txtranking.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtranking.Location = new System.Drawing.Point(154, 151);
+            this.txtranking.Location = new System.Drawing.Point(216, 155);
             this.txtranking.Name = "txtranking";
             this.txtranking.Size = new System.Drawing.Size(560, 27);
             this.txtranking.TabIndex = 12;
             // 
-            // label6
+            // txtpreco
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(18, 161);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 21);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Ranking:";
+            this.txtpreco.AutoSize = true;
+            this.txtpreco.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtpreco.ForeColor = System.Drawing.Color.Gray;
+            this.txtpreco.Location = new System.Drawing.Point(18, 161);
+            this.txtpreco.Name = "txtpreco";
+            this.txtpreco.Size = new System.Drawing.Size(115, 21);
+            this.txtpreco.TabIndex = 13;
+            this.txtpreco.Text = "Preço Venda:";
             // 
             // BtnConfirmaCadastro
             // 
@@ -155,7 +163,7 @@
             this.BtnConfirmaCadastro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnConfirmaCadastro.ForeColor = System.Drawing.Color.DimGray;
             this.BtnConfirmaCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnConfirmaCadastro.Location = new System.Drawing.Point(332, 200);
+            this.BtnConfirmaCadastro.Location = new System.Drawing.Point(332, 212);
             this.BtnConfirmaCadastro.Margin = new System.Windows.Forms.Padding(4);
             this.BtnConfirmaCadastro.Name = "BtnConfirmaCadastro";
             this.BtnConfirmaCadastro.Size = new System.Drawing.Size(153, 56);
@@ -164,40 +172,40 @@
             this.BtnConfirmaCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnConfirmaCadastro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnConfirmaCadastro.UseVisualStyleBackColor = true;
+            this.BtnConfirmaCadastro.Click += new System.EventHandler(this.BtnConfirmaCadastro_Click);
             // 
-            // txtintegrantes
+            // txtdata
             // 
-            this.txtintegrantes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtintegrantes.Location = new System.Drawing.Point(154, 105);
-            this.txtintegrantes.Margin = new System.Windows.Forms.Padding(4);
-            this.txtintegrantes.Name = "txtintegrantes";
-            this.txtintegrantes.Size = new System.Drawing.Size(560, 27);
-            this.txtintegrantes.TabIndex = 11;
+            this.txtdata.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtdata.Location = new System.Drawing.Point(216, 105);
+            this.txtdata.Margin = new System.Windows.Forms.Padding(4);
+            this.txtdata.Name = "txtdata";
+            this.txtdata.Size = new System.Drawing.Size(560, 27);
+            this.txtdata.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(18, 109);
+            this.label3.Location = new System.Drawing.Point(18, 111);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 21);
+            this.label3.Size = new System.Drawing.Size(160, 21);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Integrantes:";
+            this.label3.Text = "Data Lançamento:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(18, 65);
+            this.label2.Location = new System.Drawing.Point(18, 67);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 21);
             this.label2.TabIndex = 7;
             this.label2.Text = "Editora:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
@@ -435,15 +443,6 @@
             this.lblerro.TabIndex = 12;
             this.lblerro.Text = "*";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(154, 8);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(560, 27);
-            this.textBox1.TabIndex = 16;
-            // 
             // Livraria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -455,7 +454,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Livraria";
             this.Text = "Livraria";
-            this.Load += new System.EventHandler(this.Livraria_Load);
+            this.Load += new System.EventHandler(this.Livraria_Load_1);
             this.tabControl1.ResumeLayout(false);
             this.tabCadastrar.ResumeLayout(false);
             this.tabCadastrar.PerformLayout();
@@ -477,9 +476,9 @@
         private Button bntAddGenero;
         private ComboBox cbEditora;
         private TextBox txtranking;
-        private Label label6;
+        private Label txtpreco;
         private Button BtnConfirmaCadastro;
-        private TextBox txtintegrantes;
+        private TextBox txtdata;
         private Label label3;
         private Label label2;
         private Label label4;
@@ -501,6 +500,6 @@
         private Label label10;
         private PictureBox pictureBox1;
         private Label lblerro;
-        private TextBox textBox1;
+        private TextBox txtlivro;
     }
 }

@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="C:\Users\12303449693\Desktop\Projeto_Final\Livraria2.cs" Link="Livraria2.cs" />
+    <EmbeddedResource Remove="Livraria2.resx" />
   </ItemGroup>
 
   <ItemGroup>

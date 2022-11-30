@@ -4,6 +4,9 @@ namespace Livraria
 {
     public partial class Livraria : Form
     {
+        private object txtnome;
+        private object txtvenda;
+
         public Livraria()
         {
             InitializeComponent();
@@ -33,25 +36,36 @@ namespace Livraria
         }
 
 
-        private void Livraria_Load(object sender, EventArgs e)
+        private void Livraria_Load_1(object sender, EventArgs e)
         {
             listaEditora();
             listaProduto();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void BtnConfirmaCadastro_Click(object sender, EventArgs e)
         {
+            
+                Livro b = new Livro();
+                b.Nome = txtlivro.Text;
+                b.Editora = Convert.ToInt32(cbEditora.SelectedValue.ToString());
+                b.DataLancamento = txtdata.Text;
+                b.PrecoVenda = txtpreco.Text;
 
+                // Enviar para o banco
+
+                ConectaBanco conecta = new ConectaBanco();
+                bool retorno = conecta.insereProduto(b);
+                if (retorno == true)
+                {
+                    MessageBox.Show("Dados inseridos com sucesso !");
+                }
+                else
+                    lblerro.Text = conecta.mensagem;
+
+                
+       
+        
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbGenero_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
