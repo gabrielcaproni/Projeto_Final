@@ -17,16 +17,16 @@ namespace Livraria
             ConectaBanco con = new ConectaBanco();
             DataTable tabelaDados = new DataTable();
             tabelaDados = con.lista_editora();
-            cbEditora.DataSource = tabelaDados;
-            cbEditora.DisplayMember = "nome";
-            cbEditora.ValueMember = "codEditora";
+            cbeditora.DataSource = tabelaDados;
+            cbeditora.DisplayMember = "nome";
+            cbeditora.ValueMember = "codEditora";
             // preenchendo cbAlteraGenero
             // cbAlteraGenero.DataSource = tabelaDados;
             // cbAlteraGenero.DisplayMember = "genero";
             // cbAlteraGenero.ValueMember = "idgenero";
             //
             lblerro.Text = con.mensagem;
-            cbEditora.Text = "";
+            cbeditora.Text = "";
             //cbAlteraGenero.Text = "";
         }
         void listaProduto()
@@ -47,10 +47,11 @@ namespace Livraria
             
                 Livro b = new Livro();
                 b.Nome = txtlivro.Text;
-                b.Editora = Convert.ToInt32(cbEditora.SelectedValue.ToString());
+                b.Editora = Convert.ToInt32(cbeditora.SelectedValue.ToString());
                 b.DataLancamento = txtdata.Text;
-                b.PrecoVenda = txtpreco.Text;
-
+                b.PrecoCusto = txtprecoCusto.Text;
+                b.PrecoVenda = txtprecoVenda.Text;
+                b.QtdEstoque = txtqtd.Text;
                 // Enviar para o banco
 
                 ConectaBanco conecta = new ConectaBanco();
@@ -67,5 +68,24 @@ namespace Livraria
         
         }
 
+        private void txtnomeEditora_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Editora b = new Editora();
+
+            b.Nome = txtnomeEditora.Text;
+            ConectaBanco conecta = new ConectaBanco();
+            bool retorno = conecta.insereEditora(b);
+            if (retorno == true)
+            {
+                MessageBox.Show("Dados inseridos com sucesso !");
+            }
+            else
+                lblerro.Text = conecta.mensagem;
+        }
     }
 }

@@ -1,15 +1,18 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.1.35-MariaDB - mariadb.org binary distribution
--- OS do Servidor:               Win32
--- HeidiSQL Versão:              11.0.0.5919
+-- Versão do servidor:           10.4.25-MariaDB - mariadb.org binary distribution
+-- OS do Servidor:               Win64
+-- HeidiSQL Versão:              12.2.0.6576
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
 -- Copiando estrutura do banco de dados para livraria2si
@@ -52,14 +55,23 @@ CREATE TABLE IF NOT EXISTS `editora` (
   `nome` varchar(200) NOT NULL,
   `plataformaLancamento` varchar(100) NOT NULL,
   PRIMARY KEY (`codEditora`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Exportação de dados foi desmarcado.
+
+-- Copiando estrutura para procedure livraria2si.insere_editora
+DROP PROCEDURE IF EXISTS `insere_editora`;
+DELIMITER //
+CREATE PROCEDURE `insere_editora`(in novoNome varchar(200))
+BEGIN
+	insert into editora(nome) values (novoNome);
+END//
+DELIMITER ;
 
 -- Copiando estrutura para procedure livraria2si.insere_produto
 DROP PROCEDURE IF EXISTS `insere_produto`;
 DELIMITER //
-CREATE PROCEDURE `insere_produto`(in novoNome varchar(200),in precoVenda decimal(10,0),in precoCusto decimal(10,0),in qtdestoque int(11),in dataLancamento date,in codEditora int,in codVenda int,in codCliente int,in codcategoria int)
+CREATE PROCEDURE `insere_produto`(in novoNome varchar(200),in precoVenda Varchar(100),in precoCusto varchar(100),in qtdestoque varchar(10),in dataLancamento varchar(10),in codEditora int,in codVenda int,in codCliente int,in codcategoria int)
 BEGIN
 	insert into produto(
 		novoNome, 
@@ -263,36 +275,6 @@ BEGIN
 END//
 DELIMITER ;
 
--- Copiando estrutura para procedure livraria2si.proc_insereProduto
-DROP PROCEDURE IF EXISTS `proc_insereProduto`;
-DELIMITER //
-CREATE PROCEDURE `proc_insereProduto`(in novoNome varchar(200),in precoVenda decimal(10,0),in precoCusto decimal(10,0),in qtdestoque int(11),in dataLancamento date,in codEditora int,in codVenda int,in codCliente int,in codcategoria int)
-BEGIN
-	insert into produto(
-		novoNome, 
-        precoVenda, 
-        precoCusto, 
-        quantidadeEstoque, 
-        dataLancamento, 
-        EDITORA_codEditora, 
-        VENDA_codVenda, 
-        VENDA_CLIENTE_codCliente, 
-        CATEGORIA_codCategoria) 
-        values(
-			NULL, 
-            nome, 
-            precoVenda, 
-            precoCusto, 
-            qtdEstoque, 
-            dataLancamento, 
-            codEditora, 
-            codvenda, 
-            codCliente,
-            codcategoria
-		);
-END//
-DELIMITER ;
-
 -- Copiando estrutura para procedure livraria2si.proc_insereVenda
 DROP PROCEDURE IF EXISTS `proc_insereVenda`;
 DELIMITER //
@@ -318,11 +300,11 @@ DELIMITER ;
 -- Copiando estrutura para tabela livraria2si.produto
 DROP TABLE IF EXISTS `produto`;
 CREATE TABLE IF NOT EXISTS `produto` (
-  `codProduto` int(11) NOT NULL AUTO_INCREMENT,
+  `codProduto` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `precoVenda` varchar(100) NOT NULL,
-  `precoCusto` varchar(100) NOT NULL,
-  `quantidadeEstoque` varchar(10) NOT NULL,
+  `precoCusto` varchar(100) DEFAULT NULL,
+  `quantidadeEstoque` varchar(10) DEFAULT NULL,
   `dataLancamento` varchar(10) NOT NULL,
   `EDITORA_codEditora` int(11) NOT NULL,
   `VENDA_codVenda` int(11) NOT NULL,
@@ -335,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
   CONSTRAINT `fk_PRODUTO_CATEGORIA1` FOREIGN KEY (`CATEGORIA_codCategoria`) REFERENCES `categoria` (`codCategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_PRODUTO_EDITORA` FOREIGN KEY (`EDITORA_codEditora`) REFERENCES `editora` (`codEditora`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_PRODUTO_VENDA1` FOREIGN KEY (`VENDA_codVenda`, `VENDA_CLIENTE_codCliente`) REFERENCES `venda` (`codVenda`, `CLIENTE_codCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Exportação de dados foi desmarcado.
 
@@ -354,6 +336,8 @@ CREATE TABLE IF NOT EXISTS `venda` (
 
 -- Exportação de dados foi desmarcado.
 
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

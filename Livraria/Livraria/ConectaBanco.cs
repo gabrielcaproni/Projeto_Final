@@ -70,6 +70,17 @@ namespace Livraria
             MySqlCommand cmd = new MySqlCommand("insere_produto", conexao);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("novoNome", livro.Nome);
+            cmd.Parameters.AddWithValue("precoVenda", livro.PrecoVenda);
+            cmd.Parameters.AddWithValue("precoCusto", livro.PrecoCusto);
+            cmd.Parameters.AddWithValue("qtdEstoque", livro.QtdEstoque);
+            cmd.Parameters.AddWithValue("dataLancamento", livro.DataLancamento);
+            cmd.Parameters.AddWithValue("codEditora", livro.Editora);
+            cmd.Parameters.AddWithValue("codVenda", livro.codVenda);
+            cmd.Parameters.AddWithValue("codCliente", livro.codCliente);
+            cmd.Parameters.AddWithValue("codCategoria", livro.codCategoria);
+
+
+
             try
             {
                 conexao.Open();
@@ -87,6 +98,27 @@ namespace Livraria
             }
         }// fim insereProduto 
 
+        public bool insereEditora(Editora editora)
+        {
+            MySqlCommand cmd = new MySqlCommand("insere_editora", conexao);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("novoNome", editora.Nome);
+            try
+            {
+                conexao.Open();
+                cmd.ExecuteNonQuery(); // executa o comando
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                mensagem = "Erro:" + e.Message;
+                return false;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }// fim insereEditora
 
 
 
