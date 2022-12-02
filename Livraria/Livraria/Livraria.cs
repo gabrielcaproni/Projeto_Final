@@ -45,7 +45,7 @@ namespace Livraria
         private void BtnConfirmaCadastro_Click(object sender, EventArgs e)
         {
             
-                Livro b = new Livro();
+                Cliente b = new Cliente();
                 b.Nome = txtlivro.Text;
                 b.Editora = Convert.ToInt32(cbeditora.SelectedValue.ToString());
                 b.DataLancamento = txtdata.Text;

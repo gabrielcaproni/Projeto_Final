@@ -83,11 +83,11 @@
             this.Editora.Controls.Add(this.tabBuscar);
             this.Editora.Controls.Add(this.tabAlterar);
             this.Editora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Editora.Location = new System.Drawing.Point(67, 185);
+            this.Editora.Location = new System.Drawing.Point(67, 184);
             this.Editora.Margin = new System.Windows.Forms.Padding(4);
             this.Editora.Name = "Editora";
             this.Editora.SelectedIndex = 0;
-            this.Editora.Size = new System.Drawing.Size(809, 361);
+            this.Editora.Size = new System.Drawing.Size(809, 362);
             this.Editora.TabIndex = 10;
             // 
             // tabPage1
@@ -98,7 +98,7 @@
             this.tabPage1.Controls.Add(this.txtCadastroEditora);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(801, 332);
+            this.tabPage1.Size = new System.Drawing.Size(801, 333);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Cadastro Editora";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             this.tabCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.tabCadastrar.Name = "tabCadastrar";
             this.tabCadastrar.Padding = new System.Windows.Forms.Padding(4);
-            this.tabCadastrar.Size = new System.Drawing.Size(801, 332);
+            this.tabCadastrar.Size = new System.Drawing.Size(801, 333);
             this.tabCadastrar.TabIndex = 0;
             this.tabCadastrar.Text = "Cadastro Produto";
             // 
@@ -272,10 +272,10 @@
             this.BtnConfirmaCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnConfirmaCadastro.ForeColor = System.Drawing.Color.DimGray;
             this.BtnConfirmaCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnConfirmaCadastro.Location = new System.Drawing.Point(385, 268);
+            this.BtnConfirmaCadastro.Location = new System.Drawing.Point(385, 279);
             this.BtnConfirmaCadastro.Margin = new System.Windows.Forms.Padding(4);
             this.BtnConfirmaCadastro.Name = "BtnConfirmaCadastro";
-            this.BtnConfirmaCadastro.Size = new System.Drawing.Size(153, 56);
+            this.BtnConfirmaCadastro.Size = new System.Drawing.Size(153, 45);
             this.BtnConfirmaCadastro.TabIndex = 13;
             this.BtnConfirmaCadastro.Text = "Confirmar";
             this.BtnConfirmaCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -340,7 +340,7 @@
             this.tabBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.tabBuscar.Name = "tabBuscar";
             this.tabBuscar.Padding = new System.Windows.Forms.Padding(4);
-            this.tabBuscar.Size = new System.Drawing.Size(801, 332);
+            this.tabBuscar.Size = new System.Drawing.Size(801, 333);
             this.tabBuscar.TabIndex = 1;
             this.tabBuscar.Text = "Buscar";
             // 
@@ -427,7 +427,7 @@
             this.tabAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabAlterar.Name = "tabAlterar";
             this.tabAlterar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabAlterar.Size = new System.Drawing.Size(801, 332);
+            this.tabAlterar.Size = new System.Drawing.Size(801, 333);
             this.tabAlterar.TabIndex = 2;
             this.tabAlterar.Text = "Alterar";
             this.tabAlterar.UseVisualStyleBackColor = true;

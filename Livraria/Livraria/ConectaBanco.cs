@@ -65,7 +65,7 @@ namespace Livraria
         }// fim lista_produto
 
 
-        public bool insereProduto(Livro livro)
+        public bool insereProduto(Cliente livro)
         {
             MySqlCommand cmd = new MySqlCommand("insere_produto", conexao);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -75,9 +75,9 @@ namespace Livraria
             cmd.Parameters.AddWithValue("qtdEstoque", livro.QtdEstoque);
             cmd.Parameters.AddWithValue("dataLancamento", livro.DataLancamento);
             cmd.Parameters.AddWithValue("codEditora", livro.Editora);
-            cmd.Parameters.AddWithValue("codVenda", livro.codVenda);
-            cmd.Parameters.AddWithValue("codCliente", livro.codCliente);
-            cmd.Parameters.AddWithValue("codCategoria", livro.codCategoria);
+            //cmd.Parameters.AddWithValue("codVenda", livro.codVenda);
+           // cmd.Parameters.AddWithValue("codCliente", livro.codCliente);
+           // cmd.Parameters.AddWithValue("codCategoria", livro.codCategoria);
 
 
 
