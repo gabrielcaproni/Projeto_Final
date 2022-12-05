@@ -13,67 +13,58 @@ namespace Livraria
         {
             InitializeComponent();
         }
-
-        void listaEditora()
+        private void lista_Editora()
         {
             ConectaBanco con = new ConectaBanco();
-            DataTable tabelaDados = new DataTable();
-            tabelaDados = con.lista_editora();
-            cbeditora.DataSource = tabelaDados;
-            cbeditora.DisplayMember = "nome";
-            cbeditora.ValueMember = "codEditora";
-            // preenchendo cbAlteraGenero
-            // cbAlteraGenero.DataSource = tabelaDados;
-            // cbAlteraGenero.DisplayMember = "genero";
-            // cbAlteraGenero.ValueMember = "idgenero";
-            //
+            dgEditora.DataSource = con.lista_editora();
             lblerro.Text = con.mensagem;
-            cbeditora.Text = "";
-            //cbAlteraGenero.Text = "";
         }
         private void listaCliente()
         {
             ConectaBanco con = new ConectaBanco();
-            cbcliente.DataSource = con.listaCliente();
-            lblerro.Text = con.mensagem;05/12
+            dgClientes.DataSource = con.listaCliente();
+            lblerro.Text = con.mensagem;
         }
 
-            private void Livraria_Load_1(object sender, EventArgs e)
+        private void Livraria_Load_1(object sender, EventArgs e)
+        {
+            lista_Editora();
+            listaCliente();
+
+        }
+
+        private void BtnConfirmaCadastro_Click(object sender, EventArgs e)
+        {
+
+            Cliente b = new Cliente();
+            b.Nome = txtcliente.Text;
+            b.DataNascimento = txtdata.Text;
+            b.CPF = txtcpf.Text;
+            b.UF = txtuf.Text;
+            b.Endereco = txtendereco.Text;
+            b.Bairro = txtbairro.Text;
+            b.Cidade = txtcidade.Text;
+            b.CEP = txtcep.Text;
+            b.Email = txtemail.Text;
+            // Enviar para o banco
+
+            ConectaBanco conecta = new ConectaBanco();
+            bool retorno = conecta.insereCliente(b);
+            if (retorno == true)
             {
-                listaEditora();
-                listaCliente();
+                MessageBox.Show("Dados inseridos com sucesso !");
             }
+            else
+                lblerro.Text = conecta.mensagem;
 
-            private void BtnConfirmaCadastro_Click(object sender, EventArgs e)
-            {
+       
 
-                Cliente b = new Cliente();
-                b.Nome = txtcliente.Text;
-                b.DataNascimento = txtdata.Text;
-                b.CPF = txtcpf.Text;
-                b.UF = txtuf.Text;
-                b.Endereco = txtendereco.Text;
-                b.Bairro = txtbairro.Text;
-                b.Cidade = txtcidade.Text;
-                b.CEP = txtcep.Text;
-                b.Email = txtemail.Text;
-                // Enviar para o banco
+        lista_Editora();
+        listaCliente();
+            Cliente.SelectedTab = tabPage1;
+ }
 
-                ConectaBanco conecta = new ConectaBanco();
-                bool retorno = conecta.insereCliente(b);
-                if (retorno == true)
-                {
-                    MessageBox.Show("Dados inseridos com sucesso !");
-                }
-                else
-                    lblerro.Text = conecta.mensagem;
-
-
-
-
-            }
-
-            private void txtnomeEditora_TextChanged(object sender, EventArgs e)
+        private void txtnomeEditora_TextChanged(object sender, EventArgs e)
             {
 
             }
@@ -107,5 +98,15 @@ namespace Livraria
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            (dgClientes.DataSource as DataTable).DefaultView.RowFilter = String.Format("nome like '%{0}%'", txtBuscaCliente.Text);
+        }
+
+        private void txtEditoras_TextChanged(object sender, EventArgs e)
+        {
+            (dgEditora.DataSource as DataTable).DefaultView.RowFilter = String.Format("nome like '%{0}%'", txtEditoras.Text);
+        }
     }
-    }
+ }

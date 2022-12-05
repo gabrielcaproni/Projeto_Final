@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Livraria));
-            this.Editora = new System.Windows.Forms.TabControl();
+            this.Cliente = new System.Windows.Forms.TabControl();
             this.tabCadastrar = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bntAddGenero = new System.Windows.Forms.Button();
@@ -59,56 +59,44 @@
             this.lblerro = new System.Windows.Forms.Label();
             this.txtCadastroEditora = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtBuscaCliente = new System.Windows.Forms.TextBox();
             this.dgClientes = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.cbcliente = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabBuscar = new System.Windows.Forms.TabPage();
-            this.cbeditora = new System.Windows.Forms.ComboBox();
+            this.txtEditoras = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnRemoveBanda = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgProdutos = new System.Windows.Forms.DataGridView();
-            this.tabAlterar = new System.Windows.Forms.TabPage();
-            this.cbAlteraGenero = new System.Windows.Forms.ComboBox();
-            this.txtAlteraRanking = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnConfirmaAlteracao = new System.Windows.Forms.Button();
-            this.txtAlteraIntegrantes = new System.Windows.Forms.TextBox();
-            this.txtAlteraNome = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.dgEditora = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Editora.SuspendLayout();
+            this.Cliente.SuspendLayout();
             this.tabCadastrar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.tabBuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
-            this.tabAlterar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEditora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Editora
+            // Cliente
             // 
-            this.Editora.Controls.Add(this.tabCadastrar);
-            this.Editora.Controls.Add(this.tabPage1);
-            this.Editora.Controls.Add(this.tabPage2);
-            this.Editora.Controls.Add(this.tabBuscar);
-            this.Editora.Controls.Add(this.tabAlterar);
-            this.Editora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Editora.Location = new System.Drawing.Point(0, 190);
-            this.Editora.Margin = new System.Windows.Forms.Padding(4);
-            this.Editora.Name = "Editora";
-            this.Editora.SelectedIndex = 0;
-            this.Editora.Size = new System.Drawing.Size(626, 362);
-            this.Editora.TabIndex = 10;
+            this.Cliente.Controls.Add(this.tabCadastrar);
+            this.Cliente.Controls.Add(this.tabPage1);
+            this.Cliente.Controls.Add(this.tabPage2);
+            this.Cliente.Controls.Add(this.tabBuscar);
+            this.Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Cliente.Location = new System.Drawing.Point(0, 190);
+            this.Cliente.Margin = new System.Windows.Forms.Padding(4);
+            this.Cliente.Name = "Cliente";
+            this.Cliente.SelectedIndex = 0;
+            this.Cliente.Size = new System.Drawing.Size(704, 362);
+            this.Cliente.TabIndex = 10;
             // 
             // tabCadastrar
             // 
@@ -120,7 +108,7 @@
             this.tabCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.tabCadastrar.Name = "tabCadastrar";
             this.tabCadastrar.Padding = new System.Windows.Forms.Padding(4);
-            this.tabCadastrar.Size = new System.Drawing.Size(618, 333);
+            this.tabCadastrar.Size = new System.Drawing.Size(696, 333);
             this.tabCadastrar.TabIndex = 0;
             this.tabCadastrar.Text = "Cadastro Cliente";
             this.tabCadastrar.Click += new System.EventHandler(this.tabCadastrar_Click);
@@ -390,7 +378,7 @@
             this.tabPage1.Controls.Add(this.txtCadastroEditora);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(618, 333);
+            this.tabPage1.Size = new System.Drawing.Size(696, 333);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Cadastro Editora";
             // 
@@ -446,29 +434,37 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Blue;
+            this.tabPage2.Controls.Add(this.txtBuscaCliente);
             this.tabPage2.Controls.Add(this.dgClientes);
             this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.cbcliente);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(618, 333);
+            this.tabPage2.Size = new System.Drawing.Size(696, 333);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Busca Cliente";
+            // 
+            // txtBuscaCliente
+            // 
+            this.txtBuscaCliente.Location = new System.Drawing.Point(122, 15);
+            this.txtBuscaCliente.Name = "txtBuscaCliente";
+            this.txtBuscaCliente.Size = new System.Drawing.Size(274, 22);
+            this.txtBuscaCliente.TabIndex = 23;
+            this.txtBuscaCliente.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dgClientes
             // 
             this.dgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgClientes.Location = new System.Drawing.Point(8, 66);
+            this.dgClientes.Location = new System.Drawing.Point(8, 70);
             this.dgClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.ReadOnly = true;
             this.dgClientes.RowHeadersWidth = 51;
             this.dgClientes.RowTemplate.Height = 29;
-            this.dgClientes.Size = new System.Drawing.Size(571, 218);
+            this.dgClientes.Size = new System.Drawing.Size(680, 259);
             this.dgClientes.TabIndex = 20;
             this.dgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentClick);
             // 
@@ -481,7 +477,7 @@
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(488, 8);
+            this.button3.Location = new System.Drawing.Point(566, 4);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 41);
@@ -500,7 +496,7 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(358, 8);
+            this.button2.Location = new System.Drawing.Point(426, 4);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 41);
@@ -509,14 +505,6 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // cbcliente
-            // 
-            this.cbcliente.FormattingEnabled = true;
-            this.cbcliente.Location = new System.Drawing.Point(122, 11);
-            this.cbcliente.Name = "cbcliente";
-            this.cbcliente.Size = new System.Drawing.Size(187, 24);
-            this.cbcliente.TabIndex = 17;
             // 
             // label13
             // 
@@ -532,26 +520,26 @@
             // tabBuscar
             // 
             this.tabBuscar.BackColor = System.Drawing.Color.Blue;
-            this.tabBuscar.Controls.Add(this.cbeditora);
+            this.tabBuscar.Controls.Add(this.txtEditoras);
             this.tabBuscar.Controls.Add(this.btnAlterar);
             this.tabBuscar.Controls.Add(this.btnRemoveBanda);
             this.tabBuscar.Controls.Add(this.label5);
-            this.tabBuscar.Controls.Add(this.dgProdutos);
+            this.tabBuscar.Controls.Add(this.dgEditora);
             this.tabBuscar.Location = new System.Drawing.Point(4, 25);
             this.tabBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.tabBuscar.Name = "tabBuscar";
             this.tabBuscar.Padding = new System.Windows.Forms.Padding(4);
-            this.tabBuscar.Size = new System.Drawing.Size(618, 333);
+            this.tabBuscar.Size = new System.Drawing.Size(696, 333);
             this.tabBuscar.TabIndex = 1;
             this.tabBuscar.Text = "Busca Editora";
             // 
-            // cbeditora
+            // txtEditoras
             // 
-            this.cbeditora.FormattingEnabled = true;
-            this.cbeditora.Location = new System.Drawing.Point(122, 11);
-            this.cbeditora.Name = "cbeditora";
-            this.cbeditora.Size = new System.Drawing.Size(187, 24);
-            this.cbeditora.TabIndex = 16;
+            this.txtEditoras.Location = new System.Drawing.Point(96, 15);
+            this.txtEditoras.Name = "txtEditoras";
+            this.txtEditoras.Size = new System.Drawing.Size(247, 22);
+            this.txtEditoras.TabIndex = 16;
+            this.txtEditoras.TextChanged += new System.EventHandler(this.txtEditoras_TextChanged);
             // 
             // btnAlterar
             // 
@@ -602,142 +590,20 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Editora:";
             // 
-            // dgProdutos
+            // dgEditora
             // 
-            this.dgProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgProdutos.BackgroundColor = System.Drawing.Color.White;
-            this.dgProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProdutos.Location = new System.Drawing.Point(8, 66);
-            this.dgProdutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgProdutos.Name = "dgProdutos";
-            this.dgProdutos.ReadOnly = true;
-            this.dgProdutos.RowHeadersWidth = 51;
-            this.dgProdutos.RowTemplate.Height = 29;
-            this.dgProdutos.Size = new System.Drawing.Size(571, 218);
-            this.dgProdutos.TabIndex = 0;
-            this.dgProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdutos_CellContentClick);
-            // 
-            // tabAlterar
-            // 
-            this.tabAlterar.Controls.Add(this.cbAlteraGenero);
-            this.tabAlterar.Controls.Add(this.txtAlteraRanking);
-            this.tabAlterar.Controls.Add(this.label7);
-            this.tabAlterar.Controls.Add(this.btnConfirmaAlteracao);
-            this.tabAlterar.Controls.Add(this.txtAlteraIntegrantes);
-            this.tabAlterar.Controls.Add(this.txtAlteraNome);
-            this.tabAlterar.Controls.Add(this.label8);
-            this.tabAlterar.Controls.Add(this.label9);
-            this.tabAlterar.Controls.Add(this.label10);
-            this.tabAlterar.Location = new System.Drawing.Point(4, 25);
-            this.tabAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabAlterar.Name = "tabAlterar";
-            this.tabAlterar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabAlterar.Size = new System.Drawing.Size(618, 333);
-            this.tabAlterar.TabIndex = 2;
-            this.tabAlterar.Text = "Alterar";
-            this.tabAlterar.UseVisualStyleBackColor = true;
-            // 
-            // cbAlteraGenero
-            // 
-            this.cbAlteraGenero.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbAlteraGenero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbAlteraGenero.FormattingEnabled = true;
-            this.cbAlteraGenero.Location = new System.Drawing.Point(149, 70);
-            this.cbAlteraGenero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbAlteraGenero.Name = "cbAlteraGenero";
-            this.cbAlteraGenero.Size = new System.Drawing.Size(560, 29);
-            this.cbAlteraGenero.TabIndex = 23;
-            // 
-            // txtAlteraRanking
-            // 
-            this.txtAlteraRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAlteraRanking.Location = new System.Drawing.Point(149, 166);
-            this.txtAlteraRanking.Name = "txtAlteraRanking";
-            this.txtAlteraRanking.Size = new System.Drawing.Size(560, 26);
-            this.txtAlteraRanking.TabIndex = 20;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(12, 174);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 20);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Ranking:";
-            // 
-            // btnConfirmaAlteracao
-            // 
-            this.btnConfirmaAlteracao.FlatAppearance.BorderSize = 0;
-            this.btnConfirmaAlteracao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmaAlteracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirmaAlteracao.ForeColor = System.Drawing.Color.DimGray;
-            this.btnConfirmaAlteracao.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmaAlteracao.Image")));
-            this.btnConfirmaAlteracao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmaAlteracao.Location = new System.Drawing.Point(327, 214);
-            this.btnConfirmaAlteracao.Margin = new System.Windows.Forms.Padding(4);
-            this.btnConfirmaAlteracao.Name = "btnConfirmaAlteracao";
-            this.btnConfirmaAlteracao.Size = new System.Drawing.Size(153, 56);
-            this.btnConfirmaAlteracao.TabIndex = 22;
-            this.btnConfirmaAlteracao.Text = "Confirmar Alteração";
-            this.btnConfirmaAlteracao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmaAlteracao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfirmaAlteracao.UseVisualStyleBackColor = true;
-            // 
-            // txtAlteraIntegrantes
-            // 
-            this.txtAlteraIntegrantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAlteraIntegrantes.Location = new System.Drawing.Point(149, 120);
-            this.txtAlteraIntegrantes.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAlteraIntegrantes.Name = "txtAlteraIntegrantes";
-            this.txtAlteraIntegrantes.Size = new System.Drawing.Size(560, 26);
-            this.txtAlteraIntegrantes.TabIndex = 19;
-            // 
-            // txtAlteraNome
-            // 
-            this.txtAlteraNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAlteraNome.Location = new System.Drawing.Point(149, 26);
-            this.txtAlteraNome.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAlteraNome.Name = "txtAlteraNome";
-            this.txtAlteraNome.Size = new System.Drawing.Size(560, 29);
-            this.txtAlteraNome.TabIndex = 17;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(12, 122);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 20);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Integrantes:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(12, 78);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 20);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Genero:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(12, 31);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 20);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Nome:";
+            this.dgEditora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgEditora.BackgroundColor = System.Drawing.Color.White;
+            this.dgEditora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEditora.Location = new System.Drawing.Point(3, 66);
+            this.dgEditora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgEditora.Name = "dgEditora";
+            this.dgEditora.ReadOnly = true;
+            this.dgEditora.RowHeadersWidth = 51;
+            this.dgEditora.RowTemplate.Height = 29;
+            this.dgEditora.Size = new System.Drawing.Size(686, 261);
+            this.dgEditora.TabIndex = 0;
+            this.dgEditora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdutos_CellContentClick);
             // 
             // pictureBox1
             // 
@@ -754,7 +620,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(883, 215);
+            this.panel1.Size = new System.Drawing.Size(704, 218);
             this.panel1.TabIndex = 12;
             // 
             // Livraria
@@ -763,13 +629,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(704, 555);
-            this.Controls.Add(this.Editora);
+            this.Controls.Add(this.Cliente);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Livraria";
             this.Text = "Livraria";
             this.Load += new System.EventHandler(this.Livraria_Load_1);
-            this.Editora.ResumeLayout(false);
+            this.Cliente.ResumeLayout(false);
             this.tabCadastrar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -780,9 +646,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
             this.tabBuscar.ResumeLayout(false);
             this.tabBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).EndInit();
-            this.tabAlterar.ResumeLayout(false);
-            this.tabAlterar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEditora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -791,7 +655,7 @@
 
         #endregion
 
-        private TabControl Editora;
+        private TabControl Cliente;
         private TabPage tabCadastrar;
         private Button bntAddGenero;
         private TextBox txtendereco;
@@ -805,7 +669,7 @@
         private Button btnAlterar;
         private Button btnRemoveBanda;
         private Label label5;
-        private DataGridView dgProdutos;
+        private DataGridView dgEditora;
         private TabPage tabAlterar;
         private ComboBox cbAlteraGenero;
         private TextBox txtAlteraRanking;
@@ -837,12 +701,14 @@
         private Label label12;
         private TextBox txtdata;
         private TextBox txtnomeEditora;
-        private ComboBox cbeditora;
         private TabPage tabPage2;
         private DataGridView dgClientes;
+        private Label label13;
+        private TextBox txtBuscaCliente;
+        private TextBox textBox1;
         private Button button3;
         private Button button2;
-        private ComboBox cbcliente;
-        private Label label13;
+        private TextBox txtBuscaEditora;
+        private TextBox txtEditoras;
     }
 }

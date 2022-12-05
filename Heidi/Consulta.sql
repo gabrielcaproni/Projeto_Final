@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.1.35-MariaDB - mariadb.org binary distribution
--- OS do Servidor:               Win32
--- HeidiSQL Versão:              11.0.0.5919
+-- Versão do servidor:           10.4.10-MariaDB - mariadb.org binary distribution
+-- OS do Servidor:               Win64
+-- HeidiSQL Versão:              10.3.0.5771
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -25,82 +25,49 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   PRIMARY KEY (`codCategoria`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela livraria2si.categoria: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
+INSERT INTO `categoria` (`codCategoria`, `nome`) VALUES
+	(1, 'Suspense');
+/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela livraria2si.cliente
 DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE IF NOT EXISTS `cliente` (
   `codCliente` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
-  `dataNascimento` varchar(100) NOT NULL,
+  `dataNascimento` date NOT NULL,
   `cpf` varchar(20) NOT NULL,
-  `uf` varchar(100) NOT NULL,
+  `uf` char(2) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `bairro` varchar(100) NOT NULL,
   `cidade` varchar(45) NOT NULL,
   `cep` varchar(20) NOT NULL,
   `email` varchar(200) NOT NULL,
   PRIMARY KEY (`codCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela livraria2si.cliente: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` (`codCliente`, `nome`, `dataNascimento`, `cpf`, `uf`, `endereco`, `bairro`, `cidade`, `cep`, `email`) VALUES
+	(2, 'MailsonJendes', '2001-02-28', '123.034.469-65', 'SP', 'Rua Marcolino', 'Zona Leste', 'São Paulo', '12369-000', 'MailsonJendes@gmail.com'),
+	(3, 'Gabriel Pegoraro', '0000-00-00', '123.034.496-93', 'MG', 'Zona Rural', 'Peróbas', 'Carvalhópolis', '37760-000', 'gabrielcaproni09@gmail.com');
+/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela livraria2si.editora
 DROP TABLE IF EXISTS `editora`;
 CREATE TABLE IF NOT EXISTS `editora` (
   `codEditora` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
+  `plataformaLancamento` varchar(100) NOT NULL,
   PRIMARY KEY (`codEditora`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Exportação de dados foi desmarcado.
-
--- Copiando estrutura para procedure livraria2si.insere_cliente
-DROP PROCEDURE IF EXISTS `insere_cliente`;
-DELIMITER //
-CREATE PROCEDURE `insere_cliente`(in nome varchar(200), dataNascimento varchar(100), cpf varchar(20), uf varchar(2), endereco varchar(100), bairro varchar(100), cidade varchar(45), cep varchar(20), email varchar(200))
-BEGIN
-	insert into cliente values (null, nome, dataNascimento, cpf, uf, endereco, bairro, cidade, cep, email);
-END//
-DELIMITER ;
-
--- Copiando estrutura para procedure livraria2si.insere_editora
-DROP PROCEDURE IF EXISTS `insere_editora`;
-DELIMITER //
-CREATE PROCEDURE `insere_editora`(in novoNome varchar(200))
-BEGIN
-	insert into editora(nome) values (novoNome);
-END//
-DELIMITER ;
-
--- Copiando estrutura para procedure livraria2si.insere_produto
-DROP PROCEDURE IF EXISTS `insere_produto`;
-DELIMITER //
-CREATE PROCEDURE `insere_produto`(in novoNome varchar(200),in precoVenda Varchar(100),in precoCusto varchar(100),in qtdestoque varchar(10),in dataLancamento varchar(10))
-BEGIN
-	insert into produto(
-		novoNome, 
-        precoVenda, 
-        precoCusto, 
-        quantidadeEstoque, 
-        dataLancamento, 
-        EDITORA_codEditora,
-		VENDA_codVenda, 
-        VENDA_CLIENTE_codCliente, 
-        CATEGORIA_codCategoria)
-        values(
-            nome, 
-            precoVenda, 
-            precoCusto, 
-            qtdEstoque, 
-            dataLancamento, 
-            codEditora,
-			codvenda, 
-            codCliente,
-            codcategoria);
-		
-END//
-DELIMITER ;
+-- Copiando dados para a tabela livraria2si.editora: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `editora` DISABLE KEYS */;
+INSERT INTO `editora` (`codEditora`, `nome`, `plataformaLancamento`) VALUES
+	(2, 'Loyola', 'Saraiva');
+/*!40000 ALTER TABLE `editora` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela livraria2si.itemvenda
 DROP TABLE IF EXISTS `itemvenda`;
@@ -115,56 +82,9 @@ CREATE TABLE IF NOT EXISTS `itemvenda` (
   CONSTRAINT `fk_PRODUTO_has_VENDA_VENDA1` FOREIGN KEY (`VENDA_codVenda`) REFERENCES `venda` (`codVenda`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Exportação de dados foi desmarcado.
-
--- Copiando estrutura para procedure livraria2si.lista_cliente
-DROP PROCEDURE IF EXISTS `lista_cliente`;
-DELIMITER //
-CREATE PROCEDURE `lista_cliente`()
-BEGIN
-	SELECT 
-    `cliente`.`nome`,
-    `cliente`.`dataNascimento`,
-    `cliente`.`cpf`,
-    `cliente`.`uf`,
-    `cliente`.`endereco`,
-    `cliente`.`bairro`,
-    `cliente`.`cidade`,
-    `cliente`.`cep`,
-    `cliente`.`email`
-FROM `livraria2si`.`cliente`;
-
-END//
-DELIMITER ;
-
--- Copiando estrutura para procedure livraria2si.Lista_Editora
-DROP PROCEDURE IF EXISTS `Lista_Editora`;
-DELIMITER //
-CREATE PROCEDURE `Lista_Editora`()
-BEGIN
-	select * from editora;
-END//
-DELIMITER ;
-
--- Copiando estrutura para procedure livraria2si.Lista_Produto
-DROP PROCEDURE IF EXISTS `Lista_Produto`;
-DELIMITER //
-CREATE PROCEDURE `Lista_Produto`()
-BEGIN
-SELECT `produto`.`codProduto`,
-    `produto`.`nome`,
-    `produto`.`precoVenda`,
-    `produto`.`precoCusto`,
-    `produto`.`quantidadeEstoque`,
-    `produto`.`dataLancamento`,
-    `produto`.`EDITORA_codEditora`,
-    `produto`.`VENDA_codVenda`,
-    `produto`.`VENDA_CLIENTE_codCliente`,
-    `produto`.`CATEGORIA_codCategoria`
-FROM `livraria2si`.`produto`;
-
-END//
-DELIMITER ;
+-- Copiando dados para a tabela livraria2si.itemvenda: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `itemvenda` DISABLE KEYS */;
+/*!40000 ALTER TABLE `itemvenda` ENABLE KEYS */;
 
 -- Copiando estrutura para procedure livraria2si.proc_alteraCategoria
 DROP PROCEDURE IF EXISTS `proc_alteraCategoria`;
@@ -281,12 +201,51 @@ BEGIN
 END//
 DELIMITER ;
 
+-- Copiando estrutura para procedure livraria2si.proc_insereCliente
+DROP PROCEDURE IF EXISTS `proc_insereCliente`;
+DELIMITER //
+CREATE PROCEDURE `proc_insereCliente`(in nome varchar(200), dataNascimento date, cpf varchar(20), uf char(2), endereco varchar(100), bairro varchar(100), cidade varchar(45), cep varchar(20), email varchar(200))
+BEGIN
+	insert into cliente values (null, nome, dataNascimento, cpf, uf, endereco, bairro, cidade, cep, email);
+END//
+DELIMITER ;
+
 -- Copiando estrutura para procedure livraria2si.proc_insereEditora
 DROP PROCEDURE IF EXISTS `proc_insereEditora`;
 DELIMITER //
 CREATE PROCEDURE `proc_insereEditora`(in novoNome varchar(200), Plataforma varchar(100) )
 BEGIN
 	insert into editora(nome,plataformaLancamento) values (novoNome,Plataforma);
+END//
+DELIMITER ;
+
+-- Copiando estrutura para procedure livraria2si.proc_insereProduto
+DROP PROCEDURE IF EXISTS `proc_insereProduto`;
+DELIMITER //
+CREATE PROCEDURE `proc_insereProduto`(in novoNome varchar(200),in precoVenda decimal(10,0),in precoCusto decimal(10,0),in qtdestoque int(11),in dataLancamento date,in codEditora int,in codVenda int,in codCliente int,in codcategoria int)
+BEGIN
+	insert into produto(
+		novoNome, 
+        precoVenda, 
+        precoCusto, 
+        quantidadeEstoque, 
+        dataLancamento, 
+        EDITORA_codEditora, 
+        VENDA_codVenda, 
+        VENDA_CLIENTE_codCliente, 
+        CATEGORIA_codCategoria) 
+        values(
+			NULL, 
+            nome, 
+            precoVenda, 
+            precoCusto, 
+            qtdEstoque, 
+            dataLancamento, 
+            codEditora, 
+            codvenda, 
+            codCliente,
+            codcategoria
+		);
 END//
 DELIMITER ;
 
@@ -315,12 +274,12 @@ DELIMITER ;
 -- Copiando estrutura para tabela livraria2si.produto
 DROP TABLE IF EXISTS `produto`;
 CREATE TABLE IF NOT EXISTS `produto` (
-  `codProduto` int(11) NOT NULL,
+  `codProduto` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
-  `precoVenda` varchar(100) NOT NULL,
-  `precoCusto` varchar(100) DEFAULT NULL,
-  `quantidadeEstoque` varchar(10) DEFAULT NULL,
-  `dataLancamento` varchar(10) NOT NULL,
+  `precoVenda` decimal(10,0) NOT NULL,
+  `precoCusto` decimal(10,0) NOT NULL,
+  `quantidadeEstoque` int(11) NOT NULL,
+  `dataLancamento` date NOT NULL,
   `EDITORA_codEditora` int(11) NOT NULL,
   `VENDA_codVenda` int(11) NOT NULL,
   `VENDA_CLIENTE_codCliente` int(11) NOT NULL,
@@ -332,9 +291,13 @@ CREATE TABLE IF NOT EXISTS `produto` (
   CONSTRAINT `fk_PRODUTO_CATEGORIA1` FOREIGN KEY (`CATEGORIA_codCategoria`) REFERENCES `categoria` (`codCategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_PRODUTO_EDITORA` FOREIGN KEY (`EDITORA_codEditora`) REFERENCES `editora` (`codEditora`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_PRODUTO_VENDA1` FOREIGN KEY (`VENDA_codVenda`, `VENDA_CLIENTE_codCliente`) REFERENCES `venda` (`codVenda`, `CLIENTE_codCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela livraria2si.produto: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `produto` DISABLE KEYS */;
+INSERT INTO `produto` (`codProduto`, `nome`, `precoVenda`, `precoCusto`, `quantidadeEstoque`, `dataLancamento`, `EDITORA_codEditora`, `VENDA_codVenda`, `VENDA_CLIENTE_codCliente`, `CATEGORIA_codCategoria`) VALUES
+	(1, 'Crônicas de Tandandan', 50, 30, 100, '1989-03-25', 2, 1, 2, 1);
+/*!40000 ALTER TABLE `produto` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela livraria2si.venda
 DROP TABLE IF EXISTS `venda`;
@@ -349,7 +312,12 @@ CREATE TABLE IF NOT EXISTS `venda` (
   CONSTRAINT `fk_VENDA_CLIENTE1` FOREIGN KEY (`CLIENTE_codCliente`) REFERENCES `cliente` (`codCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela livraria2si.venda: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `venda` DISABLE KEYS */;
+INSERT INTO `venda` (`codVenda`, `dataHora`, `desconto`, `tipoVenda`, `CLIENTE_codCliente`) VALUES
+	(1, '2022-08-28', 0.05, 'À vista', 2),
+	(2, '2021-02-23', 0.00, 'Cartão Crédito', 3);
+/*!40000 ALTER TABLE `venda` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
