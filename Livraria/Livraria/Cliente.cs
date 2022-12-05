@@ -17,7 +17,6 @@ namespace Livraria
         public string Bairro { get => bairro; set => bairro = value; }
         public string Cidade { get => cidade; set => cidade = value; }
         public string CEP { get => cep; set =>  cep = value; }
-       
         public string Email { get => email; set => email = value; }
 
 

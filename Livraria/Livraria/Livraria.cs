@@ -1,4 +1,6 @@
+using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Livraria
 {
@@ -29,33 +31,36 @@ namespace Livraria
             cbeditora.Text = "";
             //cbAlteraGenero.Text = "";
         }
-        void listaProduto()
+        private void listaCliente()
         {
             ConectaBanco con = new ConectaBanco();
-            dgProdutos.DataSource = con.lista_produto();
+            cbcliente.DataSource = con.listaCliente();
+            lblerro.Text = con.mensagem;05/12
         }
 
+            private void Livraria_Load_1(object sender, EventArgs e)
+            {
+                listaEditora();
+                listaCliente();
+            }
 
-        private void Livraria_Load_1(object sender, EventArgs e)
-        {
-            listaEditora();
-            listaProduto();
-        }
+            private void BtnConfirmaCadastro_Click(object sender, EventArgs e)
+            {
 
-        private void BtnConfirmaCadastro_Click(object sender, EventArgs e)
-        {
-            
                 Cliente b = new Cliente();
-                b.Nome = txtlivro.Text;
-                b.Editora = Convert.ToInt32(cbeditora.SelectedValue.ToString());
-                b.DataLancamento = txtdata.Text;
-                b.PrecoCusto = txtprecoCusto.Text;
-                b.PrecoVenda = txtprecoVenda.Text;
-                b.QtdEstoque = txtqtd.Text;
+                b.Nome = txtcliente.Text;
+                b.DataNascimento = txtdata.Text;
+                b.CPF = txtcpf.Text;
+                b.UF = txtuf.Text;
+                b.Endereco = txtendereco.Text;
+                b.Bairro = txtbairro.Text;
+                b.Cidade = txtcidade.Text;
+                b.CEP = txtcep.Text;
+                b.Email = txtemail.Text;
                 // Enviar para o banco
 
                 ConectaBanco conecta = new ConectaBanco();
-                bool retorno = conecta.insereProduto(b);
+                bool retorno = conecta.insereCliente(b);
                 if (retorno == true)
                 {
                     MessageBox.Show("Dados inseridos com sucesso !");
@@ -63,29 +68,44 @@ namespace Livraria
                 else
                     lblerro.Text = conecta.mensagem;
 
-                
-       
-        
-        }
 
-        private void txtnomeEditora_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Editora b = new Editora();
-
-            b.Nome = txtnomeEditora.Text;
-            ConectaBanco conecta = new ConectaBanco();
-            bool retorno = conecta.insereEditora(b);
-            if (retorno == true)
-            {
-                MessageBox.Show("Dados inseridos com sucesso !");
             }
-            else
-                lblerro.Text = conecta.mensagem;
+
+            private void txtnomeEditora_TextChanged(object sender, EventArgs e)
+            {
+
+            }
+
+            private void button1_Click(object sender, EventArgs e)
+            {
+                Editora b = new Editora();
+
+                b.Nome = txtnomeEditora.Text;
+                ConectaBanco conecta = new ConectaBanco();
+                bool retorno = conecta.insereEditora(b);
+                if (retorno == true)
+                {
+                    MessageBox.Show("Dados inseridos com sucesso !");
+                }
+                else
+                    lblerro.Text = conecta.mensagem;
+            }
+
+            private void tabCadastrar_Click(object sender, EventArgs e)
+            {
+
+            }
+
+            private void dgProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            {
+
+            }
+
+        private void dgClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
-}
+    }

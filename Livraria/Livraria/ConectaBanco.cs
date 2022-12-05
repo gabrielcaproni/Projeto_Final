@@ -12,9 +12,9 @@ namespace Livraria
     internal class ConectaBanco
     {
         MySqlConnection conexao = new MySqlConnection("server=localhost;user id=root;password=;database=livraria2si");
-        public String mensagem;
+        public String? mensagem;
 
-        public DataTable lista_editora()
+        public DataTable? lista_editora()
         {
             // comentario
             MySqlCommand cmd = new MySqlCommand("Lista_Editora", conexao);
@@ -39,10 +39,9 @@ namespace Livraria
 
         }// fim lista_editora
 
-        public DataTable lista_produto()
+        public DataTable? listaCliente()
         {
-            // comentario
-            MySqlCommand cmd = new MySqlCommand("lista_produto", conexao);
+            MySqlCommand cmd = new MySqlCommand("lista_cliente", conexao);
             cmd.CommandType = CommandType.StoredProcedure;
             try
             {
@@ -62,22 +61,22 @@ namespace Livraria
                 conexao.Close();
             }
 
-        }// fim lista_produto
+        }// fim lista_cliente
 
 
-        public bool insereProduto(Cliente livro)
+        public bool insereCliente(Cliente cliente)
         {
-            MySqlCommand cmd = new MySqlCommand("insere_produto", conexao);
+            MySqlCommand cmd = new MySqlCommand("insere_cliente", conexao);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("novoNome", livro.Nome);
-            cmd.Parameters.AddWithValue("precoVenda", livro.PrecoVenda);
-            cmd.Parameters.AddWithValue("precoCusto", livro.PrecoCusto);
-            cmd.Parameters.AddWithValue("qtdEstoque", livro.QtdEstoque);
-            cmd.Parameters.AddWithValue("dataLancamento", livro.DataLancamento);
-            cmd.Parameters.AddWithValue("codEditora", livro.Editora);
-            //cmd.Parameters.AddWithValue("codVenda", livro.codVenda);
-           // cmd.Parameters.AddWithValue("codCliente", livro.codCliente);
-           // cmd.Parameters.AddWithValue("codCategoria", livro.codCategoria);
+            cmd.Parameters.AddWithValue("nome", cliente.Nome);
+            cmd.Parameters.AddWithValue("dataNascimento", cliente.DataNascimento);
+            cmd.Parameters.AddWithValue("cpf", cliente.CPF);
+            cmd.Parameters.AddWithValue("uf", cliente.UF);
+            cmd.Parameters.AddWithValue("endereco", cliente.Endereco);
+            cmd.Parameters.AddWithValue("bairro", cliente.Bairro);
+            cmd.Parameters.AddWithValue("cidade", cliente.Cidade);
+            cmd.Parameters.AddWithValue("cep", cliente.CPF );
+            cmd.Parameters.AddWithValue("email", cliente.Email);
 
 
 
