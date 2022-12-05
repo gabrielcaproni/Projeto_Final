@@ -1,13 +1,15 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.4.20-MariaDB - mariadb.org binary distribution
+-- Versão do servidor:           10.4.25-MariaDB - mariadb.org binary distribution
 -- OS do Servidor:               Win64
--- HeidiSQL Versão:              11.3.0.6295
+-- HeidiSQL Versão:              12.2.0.6576
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
@@ -33,16 +35,16 @@ DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE IF NOT EXISTS `cliente` (
   `codCliente` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
-  `dataNascimento` date NOT NULL,
+  `dataNascimento` varchar(100) NOT NULL,
   `cpf` varchar(20) NOT NULL,
-  `uf` char(2) NOT NULL,
+  `uf` varchar(100) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `bairro` varchar(100) NOT NULL,
   `cidade` varchar(45) NOT NULL,
   `cep` varchar(20) NOT NULL,
   `email` varchar(200) NOT NULL,
   PRIMARY KEY (`codCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Exportação de dados foi desmarcado.
 
@@ -51,16 +53,15 @@ DROP TABLE IF EXISTS `editora`;
 CREATE TABLE IF NOT EXISTS `editora` (
   `codEditora` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
-  `plataformaLancamento` varchar(100) NOT NULL,
   PRIMARY KEY (`codEditora`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para procedure livraria2si.insere_cliente
 DROP PROCEDURE IF EXISTS `insere_cliente`;
 DELIMITER //
-CREATE PROCEDURE `insere_cliente`(in nome varchar(200), dataNascimento date, cpf varchar(20), uf varchar(2), endereco varchar(100), bairro varchar(100), cidade varchar(45), cep varchar(20), email varchar(200))
+CREATE PROCEDURE `insere_cliente`(in nome varchar(200), dataNascimento varchar(100), cpf varchar(20), uf varchar(2), endereco varchar(100), bairro varchar(100), cidade varchar(45), cep varchar(20), email varchar(200))
 BEGIN
 	insert into cliente values (null, nome, dataNascimento, cpf, uf, endereco, bairro, cidade, cep, email);
 END//
@@ -118,6 +119,26 @@ CREATE TABLE IF NOT EXISTS `itemvenda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Exportação de dados foi desmarcado.
+
+-- Copiando estrutura para procedure livraria2si.lista_cliente
+DROP PROCEDURE IF EXISTS `lista_cliente`;
+DELIMITER //
+CREATE PROCEDURE `lista_cliente`()
+BEGIN
+	SELECT 
+    `cliente`.`nome`,
+    `cliente`.`dataNascimento`,
+    `cliente`.`cpf`,
+    `cliente`.`uf`,
+    `cliente`.`endereco`,
+    `cliente`.`bairro`,
+    `cliente`.`cidade`,
+    `cliente`.`cep`,
+    `cliente`.`email`
+FROM `livraria2si`.`cliente`;
+
+END//
+DELIMITER ;
 
 -- Copiando estrutura para procedure livraria2si.Lista_Editora
 DROP PROCEDURE IF EXISTS `Lista_Editora`;
@@ -333,6 +354,7 @@ CREATE TABLE IF NOT EXISTS `venda` (
 
 -- Exportação de dados foi desmarcado.
 
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

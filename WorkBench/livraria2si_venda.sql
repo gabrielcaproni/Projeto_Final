@@ -1,1 +1,1 @@
-SELECT * FROM livraria2si.cliente;
+call livraria2si.lista_cliente();
