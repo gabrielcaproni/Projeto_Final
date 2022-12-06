@@ -5,7 +5,9 @@ using System.Windows.Forms;
 namespace Livraria
 {
     public partial class Livraria : Form
+        
     {
+        int idAlterar;//variavel global
         private object txtnome;
         private object txtvenda;
 
@@ -114,5 +116,24 @@ namespace Livraria
             Application.Exit();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlterarCliente_Click(object sender, EventArgs e)
+        {
+            int linha = dgClientes.CurrentRow.Index; // pega linha selecionada 
+            idAlterar = Convert.ToInt32(dgClientes.Rows[linha].Cells["codCliente"].Value.ToString());
+            txtAltCliente.Text = dgClientes.Rows[linha].Cells["nome"].Value.ToString();
+            txtAltData.Text = dgClientes.Rows[linha].Cells["dataNascimento"].Value.ToString();
+            txtAltCpf.Text = dgClientes.Rows[linha].Cells["cpf"].Value.ToString();
+            txtAltUF.Text = dgClientes.Rows[linha].Cells["uf"].Value.ToString();
+            txtAltEndereco.Text = dgClientes.Rows[linha].Cells["endereco"].Value.ToString();
+            txtAltBairro.Text = dgClientes.Rows[linha].Cells["bairro"].Value.ToString();
+            txtAltCEP.Text = dgClientes.Rows[linha].Cells["cep"].Value.ToString();
+            txtAltEmail.Text = dgClientes.Rows[linha].Cells["email"].Value.ToString();
+            BuscaCliente.SelectedTab = AlteraCliente1;
+        }
     }
  }

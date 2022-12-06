@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R1GPpTtxUGNe1wfvdH6NLmsXBV4TZOw1KomlM+6NKOCZ7RLliNCdAadaAS+GjTeV6pzQJpu9nf6x86D9OrT4UQ==",
+  "dgSpecHash": "D4MITA7w8bYpPJDYXlJpM/IsEz0uM0keiKYhagsxJD/px2pZePFvP4pAfIoWOVMy+FxBVhvoRHOzMA4wD5rkSA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\12303449693\\Desktop\\Projeto_Final-main\\Livraria\\Livraria\\Livraria.csproj",
+  "projectFilePath": "C:\\Users\\12303449693\\Desktop\\Projeto_Final\\Livraria\\Livraria\\Livraria.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\12303449693\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\12303449693\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",

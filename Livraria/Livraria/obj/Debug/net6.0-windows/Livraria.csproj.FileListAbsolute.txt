@@ -78,3 +78,4 @@ C:\Users\12303449693\Desktop\Projeto_Final-main\Livraria\Livraria\obj\Debug\net6
 C:\Users\12303449693\Desktop\Projeto_Final-main\Livraria\Livraria\obj\Debug\net6.0-windows\Livraria.pdb
 C:\Users\12303449693\Desktop\Projeto_Final-main\Livraria\Livraria\obj\Debug\net6.0-windows\Livraria.genruntimeconfig.cache
 C:\Users\12303449693\Desktop\Projeto_Final-main\Livraria\Livraria\obj\Debug\net6.0-windows\ref\Livraria.dll
+C:\Users\12303449693\Desktop\Projeto_Final\Livraria\Livraria\obj\Debug\net6.0-windows\Livraria.Login.resources

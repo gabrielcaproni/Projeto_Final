@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Livraria));
-            this.Cliente = new System.Windows.Forms.TabControl();
+            this.BuscaCliente = new System.Windows.Forms.TabControl();
             this.tabCadastrar = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtdata = new System.Windows.Forms.TextBox();
@@ -59,7 +59,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtBuscaCliente = new System.Windows.Forms.TextBox();
             this.dgClientes = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAlterarCliente = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.tabBuscar = new System.Windows.Forms.TabPage();
@@ -70,8 +70,29 @@
             this.dgEditora = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nomeProjeto = new System.Windows.Forms.Label();
             this.closebtn = new System.Windows.Forms.Button();
-            this.Cliente.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.AlteraCliente1 = new System.Windows.Forms.TabPage();
+            this.txtAltData = new System.Windows.Forms.TextBox();
+            this.txtAltEmail = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtAltCidade = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtAltCEP = new System.Windows.Forms.TextBox();
+            this.txtAltBairro = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtAltCliente = new System.Windows.Forms.TextBox();
+            this.txtAltUF = new System.Windows.Forms.TextBox();
+            this.txtAltEndereco = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtAltCpf = new System.Windows.Forms.TextBox();
+            this.BuscaCliente.SuspendLayout();
             this.tabCadastrar.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -81,21 +102,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgEditora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.AlteraCliente1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Cliente
+            // BuscaCliente
             // 
-            this.Cliente.Controls.Add(this.tabCadastrar);
-            this.Cliente.Controls.Add(this.tabPage1);
-            this.Cliente.Controls.Add(this.tabPage2);
-            this.Cliente.Controls.Add(this.tabBuscar);
-            this.Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Cliente.Location = new System.Drawing.Point(3, 200);
-            this.Cliente.Margin = new System.Windows.Forms.Padding(4);
-            this.Cliente.Name = "Cliente";
-            this.Cliente.SelectedIndex = 0;
-            this.Cliente.Size = new System.Drawing.Size(1253, 333);
-            this.Cliente.TabIndex = 10;
+            this.BuscaCliente.Controls.Add(this.tabCadastrar);
+            this.BuscaCliente.Controls.Add(this.tabPage1);
+            this.BuscaCliente.Controls.Add(this.tabPage2);
+            this.BuscaCliente.Controls.Add(this.tabBuscar);
+            this.BuscaCliente.Controls.Add(this.AlteraCliente1);
+            this.BuscaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BuscaCliente.Location = new System.Drawing.Point(3, 200);
+            this.BuscaCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.BuscaCliente.Name = "BuscaCliente";
+            this.BuscaCliente.SelectedIndex = 0;
+            this.BuscaCliente.Size = new System.Drawing.Size(1253, 333);
+            this.BuscaCliente.TabIndex = 10;
             // 
             // tabCadastrar
             // 
@@ -410,7 +433,7 @@
             this.tabPage2.BackColor = System.Drawing.Color.DimGray;
             this.tabPage2.Controls.Add(this.txtBuscaCliente);
             this.tabPage2.Controls.Add(this.dgClientes);
-            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.btnAlterarCliente);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -442,24 +465,25 @@
             this.dgClientes.TabIndex = 20;
             this.dgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentClick);
             // 
-            // button3
+            // btnAlterarCliente
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(1104, 11);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 41);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Alterar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAlterarCliente.BackColor = System.Drawing.Color.White;
+            this.btnAlterarCliente.FlatAppearance.BorderSize = 0;
+            this.btnAlterarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterarCliente.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAlterarCliente.ForeColor = System.Drawing.Color.Black;
+            this.btnAlterarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterarCliente.Image")));
+            this.btnAlterarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterarCliente.Location = new System.Drawing.Point(1104, 11);
+            this.btnAlterarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAlterarCliente.Name = "btnAlterarCliente";
+            this.btnAlterarCliente.Size = new System.Drawing.Size(122, 41);
+            this.btnAlterarCliente.TabIndex = 19;
+            this.btnAlterarCliente.Text = "Alterar";
+            this.btnAlterarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAlterarCliente.UseVisualStyleBackColor = false;
+            this.btnAlterarCliente.Click += new System.EventHandler(this.btnAlterarCliente_Click);
             // 
             // button2
             // 
@@ -479,6 +503,7 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label13
             // 
@@ -584,7 +609,7 @@
             this.pictureBox1.Image = global::Livraria.Properties.Resources.livro;
             this.pictureBox1.Location = new System.Drawing.Point(448, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 176);
+            this.pictureBox1.Size = new System.Drawing.Size(271, 187);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -592,12 +617,25 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.nomeProjeto);
             this.panel1.Controls.Add(this.closebtn);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1261, 228);
             this.panel1.TabIndex = 12;
+            // 
+            // nomeProjeto
+            // 
+            this.nomeProjeto.AutoSize = true;
+            this.nomeProjeto.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nomeProjeto.ForeColor = System.Drawing.Color.White;
+            this.nomeProjeto.Location = new System.Drawing.Point(123, 78);
+            this.nomeProjeto.Name = "nomeProjeto";
+            this.nomeProjeto.Size = new System.Drawing.Size(196, 46);
+            this.nomeProjeto.TabIndex = 13;
+            this.nomeProjeto.Text = "Livraria";
             // 
             // closebtn
             // 
@@ -614,19 +652,242 @@
             this.closebtn.UseVisualStyleBackColor = true;
             this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(119, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(206, 100);
+            this.panel2.TabIndex = 14;
+            // 
+            // AlteraCliente1
+            // 
+            this.AlteraCliente1.BackColor = System.Drawing.Color.DimGray;
+            this.AlteraCliente1.Controls.Add(this.txtAltData);
+            this.AlteraCliente1.Controls.Add(this.txtAltEmail);
+            this.AlteraCliente1.Controls.Add(this.label14);
+            this.AlteraCliente1.Controls.Add(this.label15);
+            this.AlteraCliente1.Controls.Add(this.label16);
+            this.AlteraCliente1.Controls.Add(this.txtAltCidade);
+            this.AlteraCliente1.Controls.Add(this.label17);
+            this.AlteraCliente1.Controls.Add(this.txtAltCEP);
+            this.AlteraCliente1.Controls.Add(this.txtAltBairro);
+            this.AlteraCliente1.Controls.Add(this.label18);
+            this.AlteraCliente1.Controls.Add(this.txtAltCliente);
+            this.AlteraCliente1.Controls.Add(this.txtAltUF);
+            this.AlteraCliente1.Controls.Add(this.txtAltEndereco);
+            this.AlteraCliente1.Controls.Add(this.label19);
+            this.AlteraCliente1.Controls.Add(this.label20);
+            this.AlteraCliente1.Controls.Add(this.label21);
+            this.AlteraCliente1.Controls.Add(this.label22);
+            this.AlteraCliente1.Controls.Add(this.txtAltCpf);
+            this.AlteraCliente1.Location = new System.Drawing.Point(4, 25);
+            this.AlteraCliente1.Name = "AlteraCliente1";
+            this.AlteraCliente1.Padding = new System.Windows.Forms.Padding(3);
+            this.AlteraCliente1.Size = new System.Drawing.Size(1245, 304);
+            this.AlteraCliente1.TabIndex = 5;
+            this.AlteraCliente1.Text = "Altera Cliente";
+            // 
+            // txtAltData
+            // 
+            this.txtAltData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltData.Location = new System.Drawing.Point(222, 41);
+            this.txtAltData.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAltData.Name = "txtAltData";
+            this.txtAltData.Size = new System.Drawing.Size(490, 26);
+            this.txtAltData.TabIndex = 45;
+            // 
+            // txtAltEmail
+            // 
+            this.txtAltEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltEmail.Location = new System.Drawing.Point(222, 266);
+            this.txtAltEmail.Name = "txtAltEmail";
+            this.txtAltEmail.Size = new System.Drawing.Size(490, 26);
+            this.txtAltEmail.TabIndex = 44;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(32, 266);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(74, 26);
+            this.label14.TabIndex = 43;
+            this.label14.Text = "E-Mail:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(32, 202);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 26);
+            this.label15.TabIndex = 42;
+            this.label15.Text = "Cidade:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.White;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(32, 234);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 26);
+            this.label16.TabIndex = 41;
+            this.label16.Text = "CEP:";
+            // 
+            // txtAltCidade
+            // 
+            this.txtAltCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltCidade.Location = new System.Drawing.Point(222, 202);
+            this.txtAltCidade.Name = "txtAltCidade";
+            this.txtAltCidade.Size = new System.Drawing.Size(490, 26);
+            this.txtAltCidade.TabIndex = 40;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.White;
+            this.label17.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(31, 169);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 26);
+            this.label17.TabIndex = 37;
+            this.label17.Text = "Bairro:";
+            // 
+            // txtAltCEP
+            // 
+            this.txtAltCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltCEP.Location = new System.Drawing.Point(222, 234);
+            this.txtAltCEP.Name = "txtAltCEP";
+            this.txtAltCEP.Size = new System.Drawing.Size(490, 26);
+            this.txtAltCEP.TabIndex = 39;
+            // 
+            // txtAltBairro
+            // 
+            this.txtAltBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltBairro.Location = new System.Drawing.Point(222, 170);
+            this.txtAltBairro.Name = "txtAltBairro";
+            this.txtAltBairro.Size = new System.Drawing.Size(490, 26);
+            this.txtAltBairro.TabIndex = 38;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.White;
+            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(31, 73);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(51, 26);
+            this.label18.TabIndex = 29;
+            this.label18.Text = "CPF:";
+            // 
+            // txtAltCliente
+            // 
+            this.txtAltCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltCliente.Location = new System.Drawing.Point(222, 9);
+            this.txtAltCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAltCliente.Name = "txtAltCliente";
+            this.txtAltCliente.Size = new System.Drawing.Size(490, 26);
+            this.txtAltCliente.TabIndex = 34;
+            // 
+            // txtAltUF
+            // 
+            this.txtAltUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltUF.Location = new System.Drawing.Point(222, 106);
+            this.txtAltUF.Name = "txtAltUF";
+            this.txtAltUF.Size = new System.Drawing.Size(490, 26);
+            this.txtAltUF.TabIndex = 36;
+            // 
+            // txtAltEndereco
+            // 
+            this.txtAltEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltEndereco.Location = new System.Drawing.Point(222, 138);
+            this.txtAltEndereco.Name = "txtAltEndereco";
+            this.txtAltEndereco.Size = new System.Drawing.Size(490, 26);
+            this.txtAltEndereco.TabIndex = 32;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.White;
+            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(31, 6);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(76, 26);
+            this.label19.TabIndex = 28;
+            this.label19.Text = "Cliente:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.White;
+            this.label20.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(31, 106);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(44, 26);
+            this.label20.TabIndex = 35;
+            this.label20.Text = "UF:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.White;
+            this.label21.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(31, 41);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(167, 26);
+            this.label21.TabIndex = 30;
+            this.label21.Text = "Data Nascimento:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.White;
+            this.label22.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(31, 138);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(100, 26);
+            this.label22.TabIndex = 33;
+            this.label22.Text = "Endereço:";
+            // 
+            // txtAltCpf
+            // 
+            this.txtAltCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltCpf.Location = new System.Drawing.Point(222, 73);
+            this.txtAltCpf.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAltCpf.Name = "txtAltCpf";
+            this.txtAltCpf.Size = new System.Drawing.Size(490, 26);
+            this.txtAltCpf.TabIndex = 31;
+            // 
             // Livraria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1260, 534);
-            this.Controls.Add(this.Cliente);
+            this.Controls.Add(this.BuscaCliente);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Livraria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Livraria";
             this.Load += new System.EventHandler(this.Livraria_Load_1);
-            this.Cliente.ResumeLayout(false);
+            this.BuscaCliente.ResumeLayout(false);
             this.tabCadastrar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -640,13 +901,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgEditora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.AlteraCliente1.ResumeLayout(false);
+            this.AlteraCliente1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private TabControl Cliente;
+        private TabControl BuscaCliente;
         private TabPage tabCadastrar;
         private TextBox txtendereco;
         private Label txtpreco;
@@ -695,10 +959,31 @@
         private Label label13;
         private TextBox txtBuscaCliente;
         private TextBox textBox1;
-        private Button button3;
+        private Button btnAlterarCliente;
         private Button button2;
         private TextBox txtBuscaEditora;
         private TextBox txtEditoras;
         private Button closebtn;
+        private Label nomeProjeto;
+        private Panel panel2;
+        private TabPage AlteraCliente1;
+        private TextBox txtAltData;
+        private TextBox txtAltEmail;
+        private Label label14;
+        private Label label15;
+        private Label label16;
+        private TextBox txtAltCidade;
+        private Label label17;
+        private TextBox txtAltCEP;
+        private TextBox txtAltBairro;
+        private Label label18;
+        private TextBox txtAltCliente;
+        private TextBox txtAltUF;
+        private TextBox txtAltEndereco;
+        private Label label19;
+        private Label label20;
+        private Label label21;
+        private Label label22;
+        private TextBox txtAltCpf;
     }
 }
