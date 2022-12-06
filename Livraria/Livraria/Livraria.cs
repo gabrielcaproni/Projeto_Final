@@ -61,7 +61,7 @@ namespace Livraria
 
         lista_Editora();
         listaCliente();
-            Cliente.SelectedTab = tabPage1;
+            
  }
 
         private void txtnomeEditora_TextChanged(object sender, EventArgs e)
@@ -113,5 +113,6 @@ namespace Livraria
         {
             Application.Exit();
         }
+
     }
  }
