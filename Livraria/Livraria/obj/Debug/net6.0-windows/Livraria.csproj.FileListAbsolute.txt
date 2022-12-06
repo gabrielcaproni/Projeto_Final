@@ -50,3 +50,4 @@ C:\Users\Windows 10\Desktop\Projeto_Final\Livraria\Livraria\obj\Debug\net6.0-win
 C:\Users\Windows 10\Desktop\Projeto_Final\Livraria\Livraria\obj\Debug\net6.0-windows\Livraria.pdb
 C:\Users\Windows 10\Desktop\Projeto_Final\Livraria\Livraria\obj\Debug\net6.0-windows\Livraria.genruntimeconfig.cache
 C:\Users\Windows 10\Desktop\Projeto_Final\Livraria\Livraria\obj\Debug\net6.0-windows\ref\Livraria.dll
+C:\Users\Windows 10\Desktop\Projeto_Final\Livraria\Livraria\obj\Debug\net6.0-windows\Livraria.Login.resources

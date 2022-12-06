@@ -108,5 +108,10 @@ namespace Livraria
         {
             (dgEditora.DataSource as DataTable).DefaultView.RowFilter = String.Format("nome like '%{0}%'", txtEditoras.Text);
         }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
  }
