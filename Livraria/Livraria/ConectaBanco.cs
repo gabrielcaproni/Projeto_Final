@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Livraria
 {
@@ -95,7 +96,39 @@ namespace Livraria
             {
                 conexao.Close();
             }
-        }// fim insereProduto 
+        }// fim insereCliente
+
+        public bool alteraCliente(Cliente b, int idAlterar)
+        {
+            MySqlCommand cmd = new MySqlCommand("altera_Cliente", conexao);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("codCliente", idAlterar);
+            cmd.Parameters.AddWithValue("novoNome", b.Nome);
+            cmd.Parameters.AddWithValue("novaData", b.DataNascimento);
+            cmd.Parameters.AddWithValue("novoUF", b.UF);
+            cmd.Parameters.AddWithValue("novoEnd", b.Endereco);
+            cmd.Parameters.AddWithValue("novoBairro", b.Bairro);
+            cmd.Parameters.AddWithValue("novaCity", b.Cidade);
+            cmd.Parameters.AddWithValue("novoCep", b.CEP);
+            cmd.Parameters.AddWithValue("novoEmail", b.Email);
+
+
+            try
+            {
+                conexao.Open();
+                cmd.ExecuteNonQuery(); // executa o comando
+                return true;
+            }
+            catch (MySqlException e)
+            {
+                mensagem = "Erro:" + e.Message;
+                return false;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }// fim updateCliente
 
         public bool insereEditora(Editora editora)
         {
@@ -149,6 +182,9 @@ namespace Livraria
             }
         }
 
-
+        internal bool alteraCliente(Livraria l, int idAlterar)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

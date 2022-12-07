@@ -68,30 +68,31 @@
             this.btnRemoveBanda = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgEditora = new System.Windows.Forms.DataGridView();
+            this.AlteraCliente1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtAltData = new System.Windows.Forms.TextBox();
+            this.txtAltEmail = new System.Windows.Forms.TextBox();
+            this.AltEmail = new System.Windows.Forms.Label();
+            this.AltCidade = new System.Windows.Forms.Label();
+            this.AltCEP = new System.Windows.Forms.Label();
+            this.txtAltCidade = new System.Windows.Forms.TextBox();
+            this.AltBairro = new System.Windows.Forms.Label();
+            this.txtAltCEP = new System.Windows.Forms.TextBox();
+            this.txtAltBairro = new System.Windows.Forms.TextBox();
+            this.AltCPF = new System.Windows.Forms.Label();
+            this.txtAltCliente = new System.Windows.Forms.TextBox();
+            this.txtAltUF = new System.Windows.Forms.TextBox();
+            this.txtAltEndereco = new System.Windows.Forms.TextBox();
+            this.AltCliente = new System.Windows.Forms.Label();
+            this.AltUF = new System.Windows.Forms.Label();
+            this.AltData = new System.Windows.Forms.Label();
+            this.AltEndereco = new System.Windows.Forms.Label();
+            this.txtAltCpf = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nomeProjeto = new System.Windows.Forms.Label();
             this.closebtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.AlteraCliente1 = new System.Windows.Forms.TabPage();
-            this.txtAltData = new System.Windows.Forms.TextBox();
-            this.txtAltEmail = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtAltCidade = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtAltCEP = new System.Windows.Forms.TextBox();
-            this.txtAltBairro = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtAltCliente = new System.Windows.Forms.TextBox();
-            this.txtAltUF = new System.Windows.Forms.TextBox();
-            this.txtAltEndereco = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtAltCpf = new System.Windows.Forms.TextBox();
             this.BuscaCliente.SuspendLayout();
             this.tabCadastrar.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -100,9 +101,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             this.tabBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEditora)).BeginInit();
+            this.AlteraCliente1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.AlteraCliente1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BuscaCliente
@@ -455,13 +456,13 @@
             this.dgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgClientes.Location = new System.Drawing.Point(8, 72);
+            this.dgClientes.Location = new System.Drawing.Point(14, 72);
             this.dgClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.ReadOnly = true;
             this.dgClientes.RowHeadersWidth = 51;
             this.dgClientes.RowTemplate.Height = 29;
-            this.dgClientes.Size = new System.Drawing.Size(1226, 226);
+            this.dgClientes.Size = new System.Drawing.Size(1082, 226);
             this.dgClientes.TabIndex = 20;
             this.dgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentClick);
             // 
@@ -474,7 +475,7 @@
             this.btnAlterarCliente.ForeColor = System.Drawing.Color.Black;
             this.btnAlterarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterarCliente.Image")));
             this.btnAlterarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterarCliente.Location = new System.Drawing.Point(1104, 11);
+            this.btnAlterarCliente.Location = new System.Drawing.Point(960, 11);
             this.btnAlterarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterarCliente.Name = "btnAlterarCliente";
             this.btnAlterarCliente.Size = new System.Drawing.Size(122, 41);
@@ -494,7 +495,7 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(974, 11);
+            this.button2.Location = new System.Drawing.Point(830, 11);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 41);
@@ -604,6 +605,231 @@
             this.dgEditora.TabIndex = 0;
             this.dgEditora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdutos_CellContentClick);
             // 
+            // AlteraCliente1
+            // 
+            this.AlteraCliente1.BackColor = System.Drawing.Color.DimGray;
+            this.AlteraCliente1.Controls.Add(this.button3);
+            this.AlteraCliente1.Controls.Add(this.txtAltData);
+            this.AlteraCliente1.Controls.Add(this.txtAltEmail);
+            this.AlteraCliente1.Controls.Add(this.AltEmail);
+            this.AlteraCliente1.Controls.Add(this.AltCidade);
+            this.AlteraCliente1.Controls.Add(this.AltCEP);
+            this.AlteraCliente1.Controls.Add(this.txtAltCidade);
+            this.AlteraCliente1.Controls.Add(this.AltBairro);
+            this.AlteraCliente1.Controls.Add(this.txtAltCEP);
+            this.AlteraCliente1.Controls.Add(this.txtAltBairro);
+            this.AlteraCliente1.Controls.Add(this.AltCPF);
+            this.AlteraCliente1.Controls.Add(this.txtAltCliente);
+            this.AlteraCliente1.Controls.Add(this.txtAltUF);
+            this.AlteraCliente1.Controls.Add(this.txtAltEndereco);
+            this.AlteraCliente1.Controls.Add(this.AltCliente);
+            this.AlteraCliente1.Controls.Add(this.AltUF);
+            this.AlteraCliente1.Controls.Add(this.AltData);
+            this.AlteraCliente1.Controls.Add(this.AltEndereco);
+            this.AlteraCliente1.Controls.Add(this.txtAltCpf);
+            this.AlteraCliente1.Location = new System.Drawing.Point(4, 25);
+            this.AlteraCliente1.Name = "AlteraCliente1";
+            this.AlteraCliente1.Padding = new System.Windows.Forms.Padding(3);
+            this.AlteraCliente1.Size = new System.Drawing.Size(1245, 304);
+            this.AlteraCliente1.TabIndex = 5;
+            this.AlteraCliente1.Text = "Altera Cliente";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(716, 238);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(104, 54);
+            this.button3.TabIndex = 46;
+            this.button3.Text = "Confirmar Alteração\r\n";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtAltData
+            // 
+            this.txtAltData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltData.Location = new System.Drawing.Point(222, 41);
+            this.txtAltData.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAltData.Name = "txtAltData";
+            this.txtAltData.Size = new System.Drawing.Size(393, 26);
+            this.txtAltData.TabIndex = 45;
+            // 
+            // txtAltEmail
+            // 
+            this.txtAltEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltEmail.Location = new System.Drawing.Point(222, 266);
+            this.txtAltEmail.Name = "txtAltEmail";
+            this.txtAltEmail.Size = new System.Drawing.Size(393, 26);
+            this.txtAltEmail.TabIndex = 44;
+            // 
+            // AltEmail
+            // 
+            this.AltEmail.AutoSize = true;
+            this.AltEmail.BackColor = System.Drawing.Color.White;
+            this.AltEmail.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AltEmail.ForeColor = System.Drawing.Color.Black;
+            this.AltEmail.Location = new System.Drawing.Point(32, 266);
+            this.AltEmail.Name = "AltEmail";
+            this.AltEmail.Size = new System.Drawing.Size(74, 26);
+            this.AltEmail.TabIndex = 43;
+            this.AltEmail.Text = "E-Mail:";
+            // 
+            // AltCidade
+            // 
+            this.AltCidade.AutoSize = true;
+            this.AltCidade.BackColor = System.Drawing.Color.White;
+            this.AltCidade.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AltCidade.ForeColor = System.Drawing.Color.Black;
+            this.AltCidade.Location = new System.Drawing.Point(32, 202);
+            this.AltCidade.Name = "AltCidade";
+            this.AltCidade.Size = new System.Drawing.Size(75, 26);
+            this.AltCidade.TabIndex = 42;
+            this.AltCidade.Text = "Cidade:";
+            // 
+            // AltCEP
+            // 
+            this.AltCEP.AutoSize = true;
+            this.AltCEP.BackColor = System.Drawing.Color.White;
+            this.AltCEP.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AltCEP.ForeColor = System.Drawing.Color.Black;
+            this.AltCEP.Location = new System.Drawing.Point(32, 234);
+            this.AltCEP.Name = "AltCEP";
+            this.AltCEP.Size = new System.Drawing.Size(51, 26);
+            this.AltCEP.TabIndex = 41;
+            this.AltCEP.Text = "CEP:";
+            // 
+            // txtAltCidade
+            // 
+            this.txtAltCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltCidade.Location = new System.Drawing.Point(222, 202);
+            this.txtAltCidade.Name = "txtAltCidade";
+            this.txtAltCidade.Size = new System.Drawing.Size(393, 26);
+            this.txtAltCidade.TabIndex = 40;
+            // 
+            // AltBairro
+            // 
+            this.AltBairro.AutoSize = true;
+            this.AltBairro.BackColor = System.Drawing.Color.White;
+            this.AltBairro.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AltBairro.ForeColor = System.Drawing.Color.Black;
+            this.AltBairro.Location = new System.Drawing.Point(31, 169);
+            this.AltBairro.Name = "AltBairro";
+            this.AltBairro.Size = new System.Drawing.Size(72, 26);
+            this.AltBairro.TabIndex = 37;
+            this.AltBairro.Text = "Bairro:";
+            // 
+            // txtAltCEP
+            // 
+            this.txtAltCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltCEP.Location = new System.Drawing.Point(222, 234);
+            this.txtAltCEP.Name = "txtAltCEP";
+            this.txtAltCEP.Size = new System.Drawing.Size(393, 26);
+            this.txtAltCEP.TabIndex = 39;
+            // 
+            // txtAltBairro
+            // 
+            this.txtAltBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltBairro.Location = new System.Drawing.Point(222, 170);
+            this.txtAltBairro.Name = "txtAltBairro";
+            this.txtAltBairro.Size = new System.Drawing.Size(393, 26);
+            this.txtAltBairro.TabIndex = 38;
+            // 
+            // AltCPF
+            // 
+            this.AltCPF.AutoSize = true;
+            this.AltCPF.BackColor = System.Drawing.Color.White;
+            this.AltCPF.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AltCPF.ForeColor = System.Drawing.Color.Black;
+            this.AltCPF.Location = new System.Drawing.Point(31, 73);
+            this.AltCPF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AltCPF.Name = "AltCPF";
+            this.AltCPF.Size = new System.Drawing.Size(51, 26);
+            this.AltCPF.TabIndex = 29;
+            this.AltCPF.Text = "CPF:";
+            // 
+            // txtAltCliente
+            // 
+            this.txtAltCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltCliente.Location = new System.Drawing.Point(222, 9);
+            this.txtAltCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAltCliente.Name = "txtAltCliente";
+            this.txtAltCliente.Size = new System.Drawing.Size(393, 26);
+            this.txtAltCliente.TabIndex = 34;
+            // 
+            // txtAltUF
+            // 
+            this.txtAltUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltUF.Location = new System.Drawing.Point(222, 106);
+            this.txtAltUF.Name = "txtAltUF";
+            this.txtAltUF.Size = new System.Drawing.Size(393, 26);
+            this.txtAltUF.TabIndex = 36;
+            // 
+            // txtAltEndereco
+            // 
+            this.txtAltEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltEndereco.Location = new System.Drawing.Point(222, 138);
+            this.txtAltEndereco.Name = "txtAltEndereco";
+            this.txtAltEndereco.Size = new System.Drawing.Size(393, 26);
+            this.txtAltEndereco.TabIndex = 32;
+            // 
+            // AltCliente
+            // 
+            this.AltCliente.AutoSize = true;
+            this.AltCliente.BackColor = System.Drawing.Color.White;
+            this.AltCliente.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AltCliente.ForeColor = System.Drawing.Color.Black;
+            this.AltCliente.Location = new System.Drawing.Point(31, 6);
+            this.AltCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AltCliente.Name = "AltCliente";
+            this.AltCliente.Size = new System.Drawing.Size(76, 26);
+            this.AltCliente.TabIndex = 28;
+            this.AltCliente.Text = "Cliente:";
+            // 
+            // AltUF
+            // 
+            this.AltUF.AutoSize = true;
+            this.AltUF.BackColor = System.Drawing.Color.White;
+            this.AltUF.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AltUF.ForeColor = System.Drawing.Color.Black;
+            this.AltUF.Location = new System.Drawing.Point(31, 106);
+            this.AltUF.Name = "AltUF";
+            this.AltUF.Size = new System.Drawing.Size(44, 26);
+            this.AltUF.TabIndex = 35;
+            this.AltUF.Text = "UF:";
+            // 
+            // AltData
+            // 
+            this.AltData.AutoSize = true;
+            this.AltData.BackColor = System.Drawing.Color.White;
+            this.AltData.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AltData.ForeColor = System.Drawing.Color.Black;
+            this.AltData.Location = new System.Drawing.Point(31, 41);
+            this.AltData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AltData.Name = "AltData";
+            this.AltData.Size = new System.Drawing.Size(167, 26);
+            this.AltData.TabIndex = 30;
+            this.AltData.Text = "Data Nascimento:";
+            // 
+            // AltEndereco
+            // 
+            this.AltEndereco.AutoSize = true;
+            this.AltEndereco.BackColor = System.Drawing.Color.White;
+            this.AltEndereco.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AltEndereco.ForeColor = System.Drawing.Color.Black;
+            this.AltEndereco.Location = new System.Drawing.Point(31, 138);
+            this.AltEndereco.Name = "AltEndereco";
+            this.AltEndereco.Size = new System.Drawing.Size(100, 26);
+            this.AltEndereco.TabIndex = 33;
+            this.AltEndereco.Text = "Endereço:";
+            // 
+            // txtAltCpf
+            // 
+            this.txtAltCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAltCpf.Location = new System.Drawing.Point(222, 73);
+            this.txtAltCpf.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAltCpf.Name = "txtAltCpf";
+            this.txtAltCpf.Size = new System.Drawing.Size(393, 26);
+            this.txtAltCpf.TabIndex = 31;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Livraria.Properties.Resources.livro;
@@ -629,11 +855,11 @@
             // nomeProjeto
             // 
             this.nomeProjeto.AutoSize = true;
-            this.nomeProjeto.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nomeProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nomeProjeto.ForeColor = System.Drawing.Color.White;
-            this.nomeProjeto.Location = new System.Drawing.Point(123, 78);
+            this.nomeProjeto.Location = new System.Drawing.Point(148, 78);
             this.nomeProjeto.Name = "nomeProjeto";
-            this.nomeProjeto.Size = new System.Drawing.Size(196, 46);
+            this.nomeProjeto.Size = new System.Drawing.Size(148, 42);
             this.nomeProjeto.TabIndex = 13;
             this.nomeProjeto.Text = "Livraria";
             // 
@@ -660,226 +886,12 @@
             this.panel2.Size = new System.Drawing.Size(206, 100);
             this.panel2.TabIndex = 14;
             // 
-            // AlteraCliente1
-            // 
-            this.AlteraCliente1.BackColor = System.Drawing.Color.DimGray;
-            this.AlteraCliente1.Controls.Add(this.txtAltData);
-            this.AlteraCliente1.Controls.Add(this.txtAltEmail);
-            this.AlteraCliente1.Controls.Add(this.label14);
-            this.AlteraCliente1.Controls.Add(this.label15);
-            this.AlteraCliente1.Controls.Add(this.label16);
-            this.AlteraCliente1.Controls.Add(this.txtAltCidade);
-            this.AlteraCliente1.Controls.Add(this.label17);
-            this.AlteraCliente1.Controls.Add(this.txtAltCEP);
-            this.AlteraCliente1.Controls.Add(this.txtAltBairro);
-            this.AlteraCliente1.Controls.Add(this.label18);
-            this.AlteraCliente1.Controls.Add(this.txtAltCliente);
-            this.AlteraCliente1.Controls.Add(this.txtAltUF);
-            this.AlteraCliente1.Controls.Add(this.txtAltEndereco);
-            this.AlteraCliente1.Controls.Add(this.label19);
-            this.AlteraCliente1.Controls.Add(this.label20);
-            this.AlteraCliente1.Controls.Add(this.label21);
-            this.AlteraCliente1.Controls.Add(this.label22);
-            this.AlteraCliente1.Controls.Add(this.txtAltCpf);
-            this.AlteraCliente1.Location = new System.Drawing.Point(4, 25);
-            this.AlteraCliente1.Name = "AlteraCliente1";
-            this.AlteraCliente1.Padding = new System.Windows.Forms.Padding(3);
-            this.AlteraCliente1.Size = new System.Drawing.Size(1245, 304);
-            this.AlteraCliente1.TabIndex = 5;
-            this.AlteraCliente1.Text = "Altera Cliente";
-            // 
-            // txtAltData
-            // 
-            this.txtAltData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAltData.Location = new System.Drawing.Point(222, 41);
-            this.txtAltData.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAltData.Name = "txtAltData";
-            this.txtAltData.Size = new System.Drawing.Size(490, 26);
-            this.txtAltData.TabIndex = 45;
-            // 
-            // txtAltEmail
-            // 
-            this.txtAltEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAltEmail.Location = new System.Drawing.Point(222, 266);
-            this.txtAltEmail.Name = "txtAltEmail";
-            this.txtAltEmail.Size = new System.Drawing.Size(490, 26);
-            this.txtAltEmail.TabIndex = 44;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(32, 266);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 26);
-            this.label14.TabIndex = 43;
-            this.label14.Text = "E-Mail:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.White;
-            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(32, 202);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 26);
-            this.label15.TabIndex = 42;
-            this.label15.Text = "Cidade:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.White;
-            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(32, 234);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 26);
-            this.label16.TabIndex = 41;
-            this.label16.Text = "CEP:";
-            // 
-            // txtAltCidade
-            // 
-            this.txtAltCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAltCidade.Location = new System.Drawing.Point(222, 202);
-            this.txtAltCidade.Name = "txtAltCidade";
-            this.txtAltCidade.Size = new System.Drawing.Size(490, 26);
-            this.txtAltCidade.TabIndex = 40;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(31, 169);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 26);
-            this.label17.TabIndex = 37;
-            this.label17.Text = "Bairro:";
-            // 
-            // txtAltCEP
-            // 
-            this.txtAltCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAltCEP.Location = new System.Drawing.Point(222, 234);
-            this.txtAltCEP.Name = "txtAltCEP";
-            this.txtAltCEP.Size = new System.Drawing.Size(490, 26);
-            this.txtAltCEP.TabIndex = 39;
-            // 
-            // txtAltBairro
-            // 
-            this.txtAltBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAltBairro.Location = new System.Drawing.Point(222, 170);
-            this.txtAltBairro.Name = "txtAltBairro";
-            this.txtAltBairro.Size = new System.Drawing.Size(490, 26);
-            this.txtAltBairro.TabIndex = 38;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.White;
-            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(31, 73);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(51, 26);
-            this.label18.TabIndex = 29;
-            this.label18.Text = "CPF:";
-            // 
-            // txtAltCliente
-            // 
-            this.txtAltCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAltCliente.Location = new System.Drawing.Point(222, 9);
-            this.txtAltCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAltCliente.Name = "txtAltCliente";
-            this.txtAltCliente.Size = new System.Drawing.Size(490, 26);
-            this.txtAltCliente.TabIndex = 34;
-            // 
-            // txtAltUF
-            // 
-            this.txtAltUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAltUF.Location = new System.Drawing.Point(222, 106);
-            this.txtAltUF.Name = "txtAltUF";
-            this.txtAltUF.Size = new System.Drawing.Size(490, 26);
-            this.txtAltUF.TabIndex = 36;
-            // 
-            // txtAltEndereco
-            // 
-            this.txtAltEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAltEndereco.Location = new System.Drawing.Point(222, 138);
-            this.txtAltEndereco.Name = "txtAltEndereco";
-            this.txtAltEndereco.Size = new System.Drawing.Size(490, 26);
-            this.txtAltEndereco.TabIndex = 32;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.White;
-            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(31, 6);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(76, 26);
-            this.label19.TabIndex = 28;
-            this.label19.Text = "Cliente:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.White;
-            this.label20.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(31, 106);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(44, 26);
-            this.label20.TabIndex = 35;
-            this.label20.Text = "UF:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.White;
-            this.label21.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(31, 41);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(167, 26);
-            this.label21.TabIndex = 30;
-            this.label21.Text = "Data Nascimento:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.White;
-            this.label22.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(31, 138);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(100, 26);
-            this.label22.TabIndex = 33;
-            this.label22.Text = "Endereço:";
-            // 
-            // txtAltCpf
-            // 
-            this.txtAltCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAltCpf.Location = new System.Drawing.Point(222, 73);
-            this.txtAltCpf.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAltCpf.Name = "txtAltCpf";
-            this.txtAltCpf.Size = new System.Drawing.Size(490, 26);
-            this.txtAltCpf.TabIndex = 31;
-            // 
             // Livraria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1260, 534);
+            this.ClientSize = new System.Drawing.Size(1117, 534);
             this.Controls.Add(this.BuscaCliente);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -899,11 +911,11 @@
             this.tabBuscar.ResumeLayout(false);
             this.tabBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEditora)).EndInit();
+            this.AlteraCliente1.ResumeLayout(false);
+            this.AlteraCliente1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.AlteraCliente1.ResumeLayout(false);
-            this.AlteraCliente1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -969,21 +981,22 @@
         private TabPage AlteraCliente1;
         private TextBox txtAltData;
         private TextBox txtAltEmail;
-        private Label label14;
-        private Label label15;
-        private Label label16;
+        private Label AltEmail;
+        private Label AltCidade;
+        private Label AltCEP;
         private TextBox txtAltCidade;
-        private Label label17;
+        private Label AltBairro;
         private TextBox txtAltCEP;
         private TextBox txtAltBairro;
-        private Label label18;
+        private Label AltCPF;
         private TextBox txtAltCliente;
         private TextBox txtAltUF;
         private TextBox txtAltEndereco;
-        private Label label19;
-        private Label label20;
-        private Label label21;
-        private Label label22;
+        private Label AltCliente;
+        private Label AltUF;
+        private Label AltData;
+        private Label AltEndereco;
         private TextBox txtAltCpf;
+        private Button button3;
     }
 }

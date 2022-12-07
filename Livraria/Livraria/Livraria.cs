@@ -1,6 +1,7 @@
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Livraria
 {
@@ -124,16 +125,41 @@ namespace Livraria
         private void btnAlterarCliente_Click(object sender, EventArgs e)
         {
             int linha = dgClientes.CurrentRow.Index; // pega linha selecionada 
-            idAlterar = Convert.ToInt32(dgClientes.Rows[linha].Cells["codCliente"].Value.ToString());
             txtAltCliente.Text = dgClientes.Rows[linha].Cells["nome"].Value.ToString();
             txtAltData.Text = dgClientes.Rows[linha].Cells["dataNascimento"].Value.ToString();
             txtAltCpf.Text = dgClientes.Rows[linha].Cells["cpf"].Value.ToString();
             txtAltUF.Text = dgClientes.Rows[linha].Cells["uf"].Value.ToString();
             txtAltEndereco.Text = dgClientes.Rows[linha].Cells["endereco"].Value.ToString();
             txtAltBairro.Text = dgClientes.Rows[linha].Cells["bairro"].Value.ToString();
+            txtAltCidade.Text = dgClientes.Rows[linha].Cells["cidade"].Value.ToString();
             txtAltCEP.Text = dgClientes.Rows[linha].Cells["cep"].Value.ToString();
             txtAltEmail.Text = dgClientes.Rows[linha].Cells["email"].Value.ToString();
             BuscaCliente.SelectedTab = AlteraCliente1;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           Cliente l = new Cliente();
+           
+            l.Nome = txtAltCliente.Text;
+            l.DataNascimento = txtAltData.Text;
+            l.CPF = txtAltCpf.ToString();
+            l.UF = txtAltUF.Text;
+            l.Endereco = txtAltEndereco.Text;
+            l.Bairro = txtAltBairro.Text;
+            l.Cidade = txtAltCidade.Text;
+            l.CEP = txtAltCEP.Text;
+            l.Email = txtAltEmail.Text;
+
+            // Envia os dados para alterar
+            ConectaBanco conecta = new ConectaBanco();
+            bool retorno = conecta.alteraCliente(l, idAlterar);
+            if (retorno == true)
+                MessageBox.Show("Dados alterados com sucesso");
+            else
+                lblerro.Text = conecta.mensagem;
+
+            listaCliente();
         }
     }
  }
