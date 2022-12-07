@@ -125,6 +125,7 @@ namespace Livraria
         private void btnAlterarCliente_Click(object sender, EventArgs e)
         {
             int linha = dgClientes.CurrentRow.Index; // pega linha selecionada 
+            idAlterar = Convert.ToInt32(dgClientes.Rows[linha].Cells["codCliente"].Value.ToString());
             txtAltCliente.Text = dgClientes.Rows[linha].Cells["nome"].Value.ToString();
             txtAltData.Text = dgClientes.Rows[linha].Cells["dataNascimento"].Value.ToString();
             txtAltCpf.Text = dgClientes.Rows[linha].Cells["cpf"].Value.ToString();
@@ -143,7 +144,7 @@ namespace Livraria
            
             l.Nome = txtAltCliente.Text;
             l.DataNascimento = txtAltData.Text;
-            l.CPF = txtAltCpf.ToString();
+            l.CPF = txtAltCpf.Text;
             l.UF = txtAltUF.Text;
             l.Endereco = txtAltEndereco.Text;
             l.Bairro = txtAltBairro.Text;

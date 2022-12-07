@@ -462,7 +462,7 @@
             this.dgClientes.ReadOnly = true;
             this.dgClientes.RowHeadersWidth = 51;
             this.dgClientes.RowTemplate.Height = 29;
-            this.dgClientes.Size = new System.Drawing.Size(1082, 226);
+            this.dgClientes.Size = new System.Drawing.Size(1214, 226);
             this.dgClientes.TabIndex = 20;
             this.dgClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellContentClick);
             // 
@@ -475,7 +475,7 @@
             this.btnAlterarCliente.ForeColor = System.Drawing.Color.Black;
             this.btnAlterarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterarCliente.Image")));
             this.btnAlterarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterarCliente.Location = new System.Drawing.Point(960, 11);
+            this.btnAlterarCliente.Location = new System.Drawing.Point(1106, 15);
             this.btnAlterarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterarCliente.Name = "btnAlterarCliente";
             this.btnAlterarCliente.Size = new System.Drawing.Size(122, 41);
@@ -495,7 +495,7 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(830, 11);
+            this.button2.Location = new System.Drawing.Point(976, 15);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 41);
@@ -847,7 +847,7 @@
             this.panel1.Controls.Add(this.closebtn);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1261, 228);
             this.panel1.TabIndex = 12;
@@ -891,7 +891,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1117, 534);
+            this.ClientSize = new System.Drawing.Size(1268, 534);
             this.Controls.Add(this.BuscaCliente);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

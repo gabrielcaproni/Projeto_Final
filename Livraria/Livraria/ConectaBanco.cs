@@ -102,15 +102,16 @@ namespace Livraria
         {
             MySqlCommand cmd = new MySqlCommand("altera_Cliente", conexao);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("codCliente", idAlterar);
             cmd.Parameters.AddWithValue("novoNome", b.Nome);
             cmd.Parameters.AddWithValue("novaData", b.DataNascimento);
-            cmd.Parameters.AddWithValue("novoUF", b.UF);
+            cmd.Parameters.AddWithValue("novoCpf", b.CPF);
+            cmd.Parameters.AddWithValue("novoUf", b.UF);
             cmd.Parameters.AddWithValue("novoEnd", b.Endereco);
             cmd.Parameters.AddWithValue("novoBairro", b.Bairro);
             cmd.Parameters.AddWithValue("novaCity", b.Cidade);
             cmd.Parameters.AddWithValue("novoCep", b.CEP);
             cmd.Parameters.AddWithValue("novoEmail", b.Email);
+            cmd.Parameters.AddWithValue("codigo", idAlterar);
 
 
             try
